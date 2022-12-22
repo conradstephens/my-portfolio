@@ -32,18 +32,18 @@ export default function Navbar() {
         )}
       >
         <div className="flex-1" />
-        <div className="hidden sm:block">
+        {/* <div className="hidden sm:block">
           <NavButtons showButtons={showButtons} />
-        </div>
+        </div> */}
         <div className="flex-none">
           <ThemeToggle />
         </div>
-        <div className="flex-none xl:hidden">
+        {/* <div className="flex-none xl:hidden">
           <NavToggle
             showButtons={showButtons}
             setShowButtons={setShowButtons}
           />
-        </div>
+        </div> */}
       </div>
       <NavModal open={showButtons} setOpen={setShowButtons} />
     </>

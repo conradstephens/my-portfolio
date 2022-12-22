@@ -1,7 +1,21 @@
-import { Navbar } from "@/components";
+import * as React from "react";
 import Image from "next/image";
+import clsx from "clsx";
+import { Navbar, SocialLink } from "@/components";
+import { CheckIcon, ClipboardIcon } from "@heroicons/react/20/solid";
 
 export default function Index() {
+  const [copied, setCopied] = React.useState(false);
+
+  let copyTimeout: NodeJS.Timeout;
+  const onCopy = () => {
+    clearTimeout(copyTimeout);
+    setCopied(true);
+    copyTimeout = setTimeout(() => {
+      setCopied(false);
+    }, 3000);
+  };
+
   return (
     <div className="h-screen">
       <Navbar />
@@ -15,19 +29,57 @@ export default function Index() {
             <h2 className="py-2 text-2xl">Fontend developer</h2>
             <p className="text-md py-5 leading-8 text-gray-700 dark:text-gray-500">
               {
-                "Freelance software developer building applications for your needs 💻. Let's get in touch!🚀"
+                "Software developer building applications for your needs 💻. Let's get in touch!🚀"
               }
             </p>
-            <div className=" flex justify-center gap-16 py-3">
-              <label className="btn-ghost btn text-3xl text-gray-600 dark:text-gray-400">
-                <i className="fa-brands fa-twitter"></i>
-              </label>
-              <label className="btn-ghost btn text-3xl text-gray-600 dark:text-gray-400">
-                <i className="fa-brands fa-github"></i>
-              </label>
-              <label className="btn-ghost btn text-3xl text-gray-600 dark:text-gray-400">
-                <i className="fa-brands fa-discord"></i>
-              </label>
+            <div className="flex justify-center gap-6 py-3">
+              <SocialLink
+                href="https://twitter.com/conradastephens"
+                iconClassName="fa-brands fa-twitter"
+              />
+              <SocialLink
+                href="https://github.com/conradstephens"
+                iconClassName="fa-brands fa-github"
+              />
+              <SocialLink
+                href="https://www.linkedin.com/in/conrad-stephens-97033b79"
+                iconClassName="fa-brands fa-linkedin"
+              />
+              <div className="dropdown-end dropdown dropdown-bottom dropdown-hover sm:dropdown-right">
+                <label
+                  tabIndex={0}
+                  className="btn-ghost no-animation btn text-3xl text-gray-600 dark:text-gray-400"
+                >
+                  <i className="fa-brands fa-discord" />
+                </label>
+                <ul
+                  tabIndex={0}
+                  className={clsx(
+                    "dropdown-content menu rounded-box bg-base-100 p-2 shadow"
+                  )}
+                >
+                  <li>
+                    <label>
+                      conrad#7221{" "}
+                      <div
+                        className="tooltip"
+                        data-tip={copied ? "Copied" : "Copy"}
+                      >
+                        <label tabIndex={0} className="swap-rotate swap">
+                          <input
+                            className="invisible"
+                            type="checkbox"
+                            checked={copied}
+                            onChange={onCopy}
+                          />
+                          <ClipboardIcon className="swap-off m-4 w-4" />
+                          <CheckIcon className="swap-on m-4 w-4" />
+                        </label>
+                      </div>
+                    </label>
+                  </li>
+                </ul>
+              </div>
             </div>
             <div className="relative mx-auto mt-20 h-80 w-80 overflow-hidden rounded-full bg-gradient-to-b from-primary">
               <Image

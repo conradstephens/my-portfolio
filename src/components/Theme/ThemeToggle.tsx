@@ -20,6 +20,8 @@ export default function ThemeToggle() {
     setTheme("system");
   };
 
+  const onChange = () => null;
+
   return (
     <div className="dropdown-end dropdown">
       <label
@@ -30,6 +32,7 @@ export default function ThemeToggle() {
           className="invisible"
           type="checkbox"
           checked={resolvedTheme === "light"}
+          onChange={onChange}
         />
         <SunIcon className="swap-on max-md:h-4 max-md:w-4 md:h-5 md:w-5" />
         <MoonIcon className="swap-off max-md:h-4 max-md:w-4 md:h-5 md:w-5 " />
