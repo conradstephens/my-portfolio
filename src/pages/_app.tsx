@@ -4,12 +4,6 @@ import { Provider as ReduxProvider } from "react-redux";
 import { SEO, ThemeProvider } from "@/components";
 import store from "src/redux/app/store";
 
-declare global {
-  interface Window {
-    KUTE: any;
-  }
-}
-
 export default function MyApp(props: AppProps) {
   const { Component, pageProps } = props;
   return (
