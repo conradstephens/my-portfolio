@@ -80,6 +80,10 @@ export default function Hero() {
               href="https://www.linkedin.com/in/conrad-stephens-97033b79"
               iconClassName="fa-brands fa-linkedin"
             />
+            <SocialLink
+              href="https://apollo5cbus.slack.com/team/UQXM0MWJY"
+              iconClassName="fa-brands fa-slack"
+            />
             <div className="dropdown-hover dropdown-bottom dropdown-end dropdown sm:dropdown-right">
               <label
                 tabIndex={0}
