@@ -6,7 +6,6 @@ import { CheckIcon, ClipboardIcon } from "@heroicons/react/20/solid";
 
 export default function Index() {
   const [copied, setCopied] = React.useState(false);
-
   let copyTimeout: NodeJS.Timeout;
   const onCopy = () => {
     clearTimeout(copyTimeout);
@@ -25,16 +24,18 @@ export default function Index() {
           <div className="max-w-md">
             <h1 className="py-2 text-5xl font-medium">
               Conrad{" "}
-              <h1 className="inline-block text-primary transition-all duration-200 ease-in-out hover:scale-110">
+              <h1 className="inline-block text-primary transition-all duration-200 hover:scale-110">
                 Stephens.
               </h1>
             </h1>
             <h2 className="py-2 text-2xl text-primary">Fontend developer</h2>
             <p className="text-md py-5 leading-8 text-gray-700 dark:text-gray-500">
-              {
-                "Software developer building applications for your needs 💻. Let's get in touch!🚀"
-              }
+              {"Software developer building applications for your needs 💻"}
             </p>
+            <label className="btn-primary btn normal-case">
+              {"Let's get in touch!🚀"}
+            </label>
+
             <div className="flex justify-center gap-6 py-3">
               <SocialLink
                 href="https://twitter.com/conradastephens"
@@ -51,7 +52,7 @@ export default function Index() {
               <div className="dropdown-hover dropdown-bottom dropdown-end dropdown sm:dropdown-right">
                 <label
                   tabIndex={0}
-                  className="btn-ghost no-animation btn text-3xl text-gray-600 dark:text-gray-400"
+                  className="btn-ghost no-animation btn-circle btn text-3xl text-gray-600 hover:animate-bounce dark:text-gray-400"
                 >
                   <i className="fa-brands fa-discord" />
                 </label>
