@@ -3,6 +3,9 @@ import { CircularLoader } from "./Loaders";
 import { ThemeToggle, ThemeProvider } from "./Theme";
 import { Navbar, NavButtons, NavModal, NavToggle } from "./Navbar";
 import { SocialLink } from "./Social";
+import { ContactMe } from "./Contact";
+import { Hero } from "./Hero";
+import { About } from "./About";
 
 export {
   SEO,
@@ -14,4 +17,7 @@ export {
   NavModal,
   NavToggle,
   SocialLink,
+  ContactMe,
+  Hero,
+  About,
 };
