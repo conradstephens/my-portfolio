@@ -23,10 +23,13 @@ export default function Index() {
       <div className="hero">
         <div className="hero-content text-center">
           <div className="max-w-md">
-            <h1 className="py-2 text-5xl font-medium text-primary">
-              Conrad Stephens
+            <h1 className="py-2 text-5xl font-medium">
+              Conrad{" "}
+              <h1 className="inline-block text-primary transition-all duration-200 ease-in-out hover:scale-110">
+                Stephens.
+              </h1>
             </h1>
-            <h2 className="py-2 text-2xl">Fontend developer</h2>
+            <h2 className="py-2 text-2xl text-primary">Fontend developer</h2>
             <p className="text-md py-5 leading-8 text-gray-700 dark:text-gray-500">
               {
                 "Software developer building applications for your needs 💻. Let's get in touch!🚀"
@@ -45,7 +48,7 @@ export default function Index() {
                 href="https://www.linkedin.com/in/conrad-stephens-97033b79"
                 iconClassName="fa-brands fa-linkedin"
               />
-              <div className="dropdown-end dropdown dropdown-bottom dropdown-hover sm:dropdown-right">
+              <div className="dropdown-hover dropdown-bottom dropdown-end dropdown sm:dropdown-right">
                 <label
                   tabIndex={0}
                   className="btn-ghost no-animation btn text-3xl text-gray-600 dark:text-gray-400"
@@ -65,7 +68,7 @@ export default function Index() {
                         className="tooltip"
                         data-tip={copied ? "Copied" : "Copy"}
                       >
-                        <label tabIndex={0} className="swap-rotate swap">
+                        <label tabIndex={0} className="swap swap-rotate">
                           <input
                             className="invisible"
                             type="checkbox"
