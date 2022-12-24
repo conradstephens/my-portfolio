@@ -3,15 +3,15 @@ import Link from "next/link";
 
 export default function Capabilities() {
   return (
-    <div className="hero h-screen">
-      <div className="hero-content flex max-w-md flex-col space-y-24">
+    <div className="hero mb-48 h-screen sm:mb-0">
+      <div className="hero-content flex max-w-screen-md flex-col space-y-24">
         <motion.div
-          initial={{ opacity: 0, scale: 0.3, y: 50 }}
+          initial={{ opacity: 0, y: 50 }}
           transition={{ duration: 0.5 }}
-          whileInView={{ opacity: 1, scale: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
         >
           <h3 className="text-5xl font-medium">About me</h3>
-          <p className="text-md py-2 leading-8 text-gray-700 dark:text-gray-500">
+          <p className="text-md py-2 leading-8 text-base-content/75">
             Ive been working as a{" "}
             <span className="text-primary">professional</span> developer for the
             past three years. Since the beginning of my professional journey,
@@ -21,14 +21,14 @@ export default function Capabilities() {
             both business and consumer use. Lately I have been most interested
             in learning and developing web3 stuff.
           </p>
-          <p className="text-md py-4 leading-8 text-gray-700 dark:text-gray-500">
+          <p className="text-md py-4 leading-8 text-base-content/75">
             {
               "Below are the more common technologies I utilize in my development"
             }
           </p>
         </motion.div>
 
-        <div className="relative grid aspect-square place-items-center text-base-content">
+        <div className="relative grid aspect-square place-items-center py-32 text-base-content">
           <motion.div
             initial={{
               opacity: 0,

@@ -1,4 +1,4 @@
-import { ContactMe, Navbar, Hero, About } from "@/components";
+import { ContactMe, Navbar, Hero, About, Projects } from "@/components";
 
 export default function Index() {
   return (
@@ -12,6 +12,11 @@ export default function Index() {
       {/* about/ */}
       <section id="about">
         <About />
+      </section>
+
+      {/* projects */}
+      <section id="projects">
+        <Projects />
       </section>
 
       {/* contact */}
