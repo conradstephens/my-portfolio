@@ -19,6 +19,7 @@
     "@reduxjs/toolkit": "^1.9.1",
     "clsx": "^1.2.1",
     "daisyui": "^2.45.0",
+    "framer-motion": "^8.0.1",
     "next": "latest",
     "next-themes": "^0.2.1",
     "react": "latest",

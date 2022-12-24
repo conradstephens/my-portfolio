@@ -4,6 +4,7 @@ import {
   ComputerDesktopIcon,
 } from "@heroicons/react/20/solid";
 import { useTheme } from "next-themes";
+import { motion } from "framer-motion";
 
 export default function ThemeToggle() {
   const { resolvedTheme, setTheme } = useTheme();
@@ -23,10 +24,15 @@ export default function ThemeToggle() {
   const onChange = () => null;
 
   return (
-    <div className="dropdown-end dropdown">
+    <motion.div
+      initial={{ opacity: 0, scale: 0.3 }}
+      transition={{ duration: 0.3 }}
+      animate={{ opacity: 1, scale: 1 }}
+      className="dropdown-end dropdown"
+    >
       <label
         tabIndex={0}
-        className="swap btn-ghost swap-rotate btn-square btn relative m-1"
+        className="swap-rotate swap btn-ghost btn-square btn relative m-1"
       >
         <input
           className="invisible"
@@ -69,6 +75,6 @@ export default function ThemeToggle() {
           </a>
         </li>
       </ul>
-    </div>
+    </motion.div>
   );
 }
