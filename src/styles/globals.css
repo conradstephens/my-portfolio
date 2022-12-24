@@ -3,6 +3,14 @@
 @tailwind utilities;
 
 @layer components {
+  .skill-icon {
+    @apply h-10 w-10 fill-base-content;
+  }
+
+  .skill-icon-link {
+    @apply btn-ghost btn-circle btn h-14 w-14 hover:animate-bounce;
+  }
+
   .contactInput {
     @apply rounded-sm border-[#242424] bg-slate-400/10 px-6 py-4 text-gray-500 placeholder-gray-500 outline-none transition-all hover:border-primary/40 focus:border-primary/40;
   }

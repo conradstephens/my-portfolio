@@ -2,24 +2,22 @@ import { ContactMe, Navbar, Hero, About } from "@/components";
 
 export default function Index() {
   return (
-    <div className="z-0 h-screen snap-y snap-mandatory overflow-scroll">
+    <div className="z-0">
       <Navbar />
-      <div className="pt-20" />
-
       {/* hero */}
-      <section id="hero" className="snap-start">
+      <section id="hero">
         <Hero />
       </section>
 
       {/* about/ */}
-      <section id="about" className="snap-center">
+      <section id="about">
         <About />
       </section>
 
       {/* contact */}
-      <section id="contact">
+      {/* <section id="contact">
         <ContactMe />
-      </section>
+      </section> */}
     </div>
   );
 }
