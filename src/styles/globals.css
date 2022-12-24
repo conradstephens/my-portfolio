@@ -4,7 +4,7 @@
 
 @layer components {
   .skill-icon {
-    @apply h-10 w-10 fill-base-content;
+    @apply h-10 w-10 fill-base-content/75;
   }
 
   .skill-icon-link {

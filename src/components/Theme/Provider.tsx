@@ -19,7 +19,7 @@ function ThemeSelector({ children }: ParentProps) {
   }
 
   return (
-    <div data-theme={resolvedTheme === "light" ? "emerald" : "forest"}>
+    <div data-theme={resolvedTheme === "light" ? "winter" : "night"}>
       {children}
     </div>
   );

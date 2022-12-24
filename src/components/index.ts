@@ -6,6 +6,7 @@ import { SocialLink } from "./Social";
 import { ContactMe } from "./Contact";
 import { Hero } from "./Hero";
 import { About } from "./About";
+import { Projects, ProjectsCard } from "./Projects";
 
 export {
   SEO,
@@ -20,4 +21,6 @@ export {
   ContactMe,
   Hero,
   About,
+  Projects,
+  ProjectsCard,
 };
