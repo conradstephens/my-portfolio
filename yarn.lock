@@ -2116,6 +2116,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@vercel/analytics@npm:^0.1.6":
+  version: 0.1.6
+  resolution: "@vercel/analytics@npm:0.1.6"
+  peerDependencies:
+    react: ^16.8||^17||^18
+  checksum: 4428e27778cac2ddb1b55fb2e499e04cbe7ddb76dac4fbcbc1e992729da03166807f72c28664ab0addad7223217baef55b5b7b5210a25967c3652b6b2c07d0be
+  languageName: node
+  linkType: hard
+
 "@yarnpkg/core@npm:^4.0.0-rc.22":
   version: 4.0.0-rc.22
   resolution: "@yarnpkg/core@npm:4.0.0-rc.22"
@@ -9588,6 +9597,7 @@ __metadata:
     "@testing-library/react": ^13.4.0
     "@types/node": ^18.11.13
     "@types/react": ^18.0.21
+    "@vercel/analytics": ^0.1.6
     "@yarnpkg/sdks": ^3.0.0-rc.22
     autoprefixer: ^10.4.13
     clsx: ^1.2.1
