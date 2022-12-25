@@ -2,7 +2,7 @@ import Head from "next/head";
 import Script from "next/script";
 
 export default function DefaultSEO() {
-  const title = "Conrad Stephens Portfolio";
+  const title = "Conrad Stephens | Frontend Developer";
   const description =
     "A starter template using NextJS, Tailwind CSS and Redux Toolkit";
   return (

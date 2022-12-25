@@ -9,20 +9,22 @@ export default function Index() {
         <Hero />
       </section>
 
-      {/* about/ */}
-      <section id="about">
-        <About />
-      </section>
+      <div className="space-y-32">
+        {/* about/ */}
+        <section id="about">
+          <About />
+        </section>
 
-      {/* projects */}
-      <section id="projects">
-        <Projects />
-      </section>
+        {/* projects */}
+        <section id="projects">
+          <Projects />
+        </section>
 
-      {/* contact */}
-      {/* <section id="contact">
-        <ContactMe />
-      </section> */}
+        {/* contact */}
+        <section id="contact">
+          <ContactMe />
+        </section>
+      </div>
     </div>
   );
 }

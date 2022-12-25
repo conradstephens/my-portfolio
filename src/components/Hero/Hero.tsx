@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { SocialLink } from "@/components";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -14,9 +15,9 @@ export default function Hero() {
           >
             <h1 className="py-2 text-5xl font-medium">
               Conrad{" "}
-              <h1 className="inline-block text-primary transition-all duration-200 hover:scale-110">
+              <span className="inline-block text-primary transition-all duration-200 hover:scale-110">
                 Stephens.
-              </h1>
+              </span>
             </h1>
           </motion.div>
           <motion.div
@@ -24,7 +25,7 @@ export default function Hero() {
             transition={{ duration: 0.3, delay: 0.15 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
           >
-            <h2 className="py-2 text-2xl text-primary">Fontend developer</h2>
+            <h2 className="py-2 text-2xl text-primary">Frontend developer</h2>
           </motion.div>
           <motion.div
             initial={{ opacity: 0, scale: 0.3, y: 50 }}
@@ -44,9 +45,12 @@ export default function Hero() {
               transition={{ duration: 0.3, delay: 0.35 }}
               animate={{ opacity: 1, scale: 1 }}
             >
-              <label className="btn-primary btn normal-case hover:animate-pulse">
+              <Link
+                href="/#contact"
+                className="btn-primary btn normal-case hover:animate-pulse"
+              >
                 {"Let's get in touch!🚀"}
-              </label>
+              </Link>
             </motion.div>
 
             <motion.div
@@ -68,7 +72,7 @@ export default function Hero() {
                 iconClassName="fa-brands fa-linkedin text-base-content/75"
               />
               <SocialLink
-                href="https://apollo5cbus.slack.com/team/UQXM0MWJY"
+                href={`https://apollo5cbus.slack.com/team/${process.env.SLACK_USER_ID}`}
                 iconClassName="fa-brands fa-slack text-base-content/75"
               />
               <SocialLink
