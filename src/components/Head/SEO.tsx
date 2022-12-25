@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Script from "next/script";
 
 export default function DefaultSEO() {
   const title = "Conrad Stephens | Frontend Developer";
@@ -47,10 +46,6 @@ export default function DefaultSEO() {
         <meta property="og:description" content={description} key="ogdesc" />
         <title>{title}</title>
       </Head>
-      <Script
-        src="https://kit.fontawesome.com/9f3dc8ac1d.js"
-        crossOrigin="anonymous"
-      />
     </>
   );
 }
