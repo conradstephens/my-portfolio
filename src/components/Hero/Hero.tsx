@@ -25,7 +25,7 @@ export default function Hero() {
             transition={{ duration: 0.3, delay: 0.15 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
           >
-            <h2 className="py-2 text-2xl text-primary">Frontend developer</h2>
+            <h2 className="py-2 text-2xl text-primary">Frontend Developer</h2>
           </motion.div>
           <motion.div
             initial={{ opacity: 0, scale: 0.3, y: 50 }}
