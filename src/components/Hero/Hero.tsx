@@ -91,6 +91,7 @@ export default function Hero() {
           <Image
             alt="portrait"
             fill
+            priority
             style={{ objectFit: "cover", marginLeft: 10 }}
             src="https://gateway.pinata.cloud/ipfs/QmTNXiXFaRfzBJbZZ5nTJJY2cxiypnbeo77W1JbmqvYmkv"
           />
