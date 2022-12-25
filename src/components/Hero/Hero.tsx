@@ -72,7 +72,7 @@ export default function Hero() {
                 iconClassName="fa-brands fa-linkedin text-base-content/75"
               />
               <SocialLink
-                href={`https://apollo5cbus.slack.com/team/${process.env.SLACK_USER_ID}`}
+                href={`https://apollo5cbus.slack.com/team/${process.env.NEXT_PUBLIC_SLACK_USER_ID}`}
                 iconClassName="fa-brands fa-slack text-base-content/75"
               />
               <SocialLink

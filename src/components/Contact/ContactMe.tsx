@@ -39,25 +39,36 @@ export default function ContactMe() {
 
   let messageTimeout: NodeJS.Timeout;
   const onSubmit: SubmitHandler<FormInputs> = (data) => {
+    if (window.grecaptcha === undefined) {
+      window.grecaptcha = {};
+    }
     setLoading(true);
-    fetch(`${window.location.origin}/api/slackMessage`, {
-      method: "POST",
-      body: JSON.stringify(data),
-    })
-      .then(async (res) => {
-        clearTimeout(messageTimeout);
-        const data = (await res.json()) as SlackMessageResponse;
-        setSlackRes(data);
-        setTimeout(() => {
-          hideToast();
-        }, 3000);
-        setLoading(false);
-        reset();
-      })
-      .catch((e) => {
-        setLoading(false);
-        console.log(e);
-      });
+    window.grecaptcha.ready(function () {
+      window.grecaptcha
+        .execute(process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY, {
+          action: "submit",
+        })
+        .then(function (token: string) {
+          fetch(`${window.location.origin}/api/slackMessage`, {
+            method: "POST",
+            body: JSON.stringify({ ...data, token }),
+          })
+            .then(async (res) => {
+              clearTimeout(messageTimeout);
+              const data = (await res.json()) as SlackMessageResponse;
+              setSlackRes(data);
+              setTimeout(() => {
+                hideToast();
+              }, 3000);
+              setLoading(false);
+              reset();
+            })
+            .catch((e) => {
+              setLoading(false);
+              console.log(e);
+            });
+        });
+    });
   };
   return (
     <div className="hero">
