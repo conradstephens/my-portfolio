@@ -5,13 +5,11 @@ import clsx from "clsx";
 export default function Navbar() {
   const [showButtons, setShowButtons] = React.useState(false);
   const [isScrolling, setIsScrolling] = React.useState(false);
-  const [isDocked, setIsDocked] = React.useState(true);
 
   let scrollTimeout: NodeJS.Timeout;
   const onScroll = (_e: Event) => {
     window.clearTimeout(scrollTimeout);
     setIsScrolling(true);
-    setIsDocked(window.scrollY === 0);
     scrollTimeout = setTimeout(() => {
       setIsScrolling(false);
     }, 500);
@@ -26,9 +24,8 @@ export default function Navbar() {
     <>
       <div
         className={clsx(
-          "navbar fixed top-0 left-0 z-50 bg-base-100 opacity-0 transition duration-500 ease-out",
-          !isScrolling && "opacity-100",
-          !isDocked && "shadow-xl"
+          "navbar fixed top-0 left-0 z-10 bg-base-100 opacity-0 transition duration-500 ease-out",
+          !isScrolling && "opacity-100"
         )}
       >
         <div className="flex-1" />

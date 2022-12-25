@@ -9085,6 +9085,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"tailwind-scrollbar@npm:^2.0.1":
+  version: 2.0.1
+  resolution: "tailwind-scrollbar@npm:2.0.1"
+  peerDependencies:
+    tailwindcss: 3.x
+  checksum: 8f72ad2d19cffdd53b5deec4fd6a6c4fffa9206c472fd89df803db97c7723a1b0a7fc0b4d5345b69b71f2e0fd7a036eaebc2a533feb4d71caec48dc49bb17ca5
+  languageName: node
+  linkType: hard
+
 "tailwindcss@npm:^3, tailwindcss@npm:^3.2.4":
   version: 3.2.4
   resolution: "tailwindcss@npm:3.2.4"
@@ -9601,6 +9610,7 @@ __metadata:
     react-hook-form: ^7.40.0
     react-redux: ^8.0.5
     redux-thunk: ^2.4.2
+    tailwind-scrollbar: ^2.0.1
     tailwindcss: ^3.2.4
     text-encoding: ^0.7.0
     typescript: ^4.9.4
