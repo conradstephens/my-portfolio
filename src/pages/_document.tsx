@@ -5,6 +5,7 @@ import Document, {
   NextScript,
   DocumentContext,
 } from "next/document";
+import Script from "next/script";
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
@@ -21,6 +22,7 @@ class MyDocument extends Document {
             src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
             async
           />
+          <script src="https://kit.fontawesome.com/9f3dc8ac1d.js" async />
         </Head>
         <body>
           <Main />
