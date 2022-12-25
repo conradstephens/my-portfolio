@@ -19,9 +19,7 @@ export default function Projects() {
 
         <ProjectCard
           title="Killerpapers"
-          description="cdEnv is a safe, self-hosting system for storing keys and
-              variables for various environments and projects. It has an HTTP
-              API and a command-line interface that makes it simple to use."
+          description="Killerpapers is a service where students can receive academic writing help from professional writers. I was responsible for both frontend and backend development on this project."
           imageSrc="https://gateway.pinata.cloud/ipfs/QmWdFXfFeccuaP2VYrgGqdv8Cikf3GNPa1CSUQxkEwdAtk"
           projectLink=""
         />
