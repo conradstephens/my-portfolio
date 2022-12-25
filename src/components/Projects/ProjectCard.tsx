@@ -16,11 +16,11 @@ export default function ProjectCard(props: ProjectCardProps) {
       initial={{ opacity: 0, y: 50 }}
       transition={{ duration: 0.5, delay: 0.2 }}
       whileInView={{ opacity: 1, y: 0 }}
-      className="card h-[500px] w-full overflow-hidden border-2 border-gray-300 bg-base-100 dark:border-gray-700 md:h-[300px] md:card-side"
+      className="card h-[500px] w-full overflow-hidden border-2 border-gray-300 dark:border-gray-700 md:h-[300px] md:card-side"
     >
       <div className="h-2/4 w-full overflow-hidden md:h-full md:w-2/4">
         <Image
-          className="transition duration-500 ease-in-out hover:scale-105"
+          className="transition duration-500 ease-in-out hover:scale-105 active:scale-105"
           height={500}
           width={500}
           style={{ objectFit: "cover", height: "100%", width: "100%" }}

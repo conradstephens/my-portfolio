@@ -26,11 +26,7 @@ module.exports = {
   variants: {
     typography: ["dark"],
   },
-  plugins: [
-    require("@tailwindcss/typography"),
-    require("@tailwindcss/forms"),
-    require("daisyui"),
-  ],
+  plugins: [require("@tailwindcss/typography"), require("daisyui")],
   daisyui: {
     themes: ["winter", "night"],
     darkTheme: "night",

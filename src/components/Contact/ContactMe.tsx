@@ -1,5 +1,9 @@
-import { PhoneIcon, EnvelopeIcon } from "@heroicons/react/20/solid";
+import * as yup from "yup";
 import { useForm, SubmitHandler } from "react-hook-form";
+import { motion } from "framer-motion";
+import { yupResolver } from "@hookform/resolvers/yup";
+import Link from "next/link";
+import clsx from "clsx";
 
 type FormInputs = {
   name: string;
@@ -8,64 +12,117 @@ type FormInputs = {
   message: string;
 };
 
+const validationSchema = yup.object({
+  name: yup.string().required("I need to know who I'm talking to!"),
+  email: yup
+    .string()
+    .email("I need a valid email address!")
+    .required("I need a way to respond to you!"),
+  message: yup.string().required("What are we talking about?"),
+});
+
 export default function ContactMe() {
-  const { handleSubmit, register } = useForm<FormInputs>();
+  const {
+    handleSubmit,
+    register,
+    formState: { errors },
+  } = useForm<FormInputs>({
+    resolver: yupResolver(validationSchema),
+  });
+
   const onSubmit: SubmitHandler<FormInputs> = (data) => console.log(data);
   return (
-    <div className="relative mx-auto flex max-w-7xl flex-col items-center justify-evenly px-10 text-center md:flex-row md:text-left">
-      <h3 className="text-3xl">Contact</h3>
-
-      <div className="flex flex-col space-y-10">
-        <h4 className="text-center text-4xl font-semibold">
-          You need it. I got it. <span>Lets talk</span>
-        </h4>
-
-        <div className="space-y-10">
-          <div className="flex items-center justify-center space-x-5">
-            <PhoneIcon className="h-7 w-7 animate-pulse text-primary" />
-            <p className="text-2xl">+6145727796</p>
-          </div>
-          <div className="flex items-center justify-center space-x-5">
-            <EnvelopeIcon className="h-7 w-7 animate-pulse text-primary" />
-            <p className="text-2xl">conrad@apollo5.dev</p>
-          </div>
-        </div>
-
-        <form
-          onSubmit={handleSubmit(onSubmit)}
-          className="mx-auto flex w-fit flex-col space-y-2"
+    <div className="hero">
+      <div className="hero-content flex w-full max-w-screen-md flex-col items-start space-y-2">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          transition={{ duration: 0.5 }}
+          whileInView={{ opacity: 1, y: 0 }}
         >
-          <div className="flex space-x-2">
+          <h3 className="text-5xl font-medium">Contact</h3>
+          <p className="text-md py-2 leading-8 text-base-content/75">
+            {"Let's connect! Please feel free to message me on any of my "}
+            <Link
+              href="/#hero"
+              className="btn-link btn p-0 lowercase text-primary no-underline hover:animate-pulse"
+            >
+              social media
+            </Link>{" "}
+            accounts or send me a message below!
+          </p>
+        </motion.div>
+
+        <motion.form
+          initial={{ opacity: 0, y: 50 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          onSubmit={handleSubmit(onSubmit)}
+          className="grid w-full grid-cols-2 gap-2"
+        >
+          <div className="form-control col-span-2 sm:col-span-1">
             <input
               {...register("name")}
               placeholder="Name"
-              className="contactInput"
+              className={clsx(
+                "contactInput",
+                errors["name"] && "input-error outline-error"
+              )}
               type="text"
             />
+            {errors["name"] && (
+              <label className="label">
+                <span className="label-text-alt text-error">
+                  {errors["name"]?.message}
+                </span>
+              </label>
+            )}
+          </div>
+          <div className="form-control col-span-2 sm:col-span-1">
             <input
               {...register("email")}
               placeholder="Email"
-              className="contactInput"
+              className={clsx(
+                "contactInput",
+                errors["email"] && "input-error outline-error"
+              )}
               type="email"
             />
+            {errors["email"] && (
+              <label className="label">
+                <span className="label-text-alt text-error">
+                  {errors["email"]?.message}
+                </span>
+              </label>
+            )}
           </div>
-
           <input
             {...register("subject")}
             placeholder="Subject"
-            className="contactInput"
+            className="contactInput col-span-2"
             type="text"
           />
-
-          <textarea
-            {...register("message")}
-            placeholder="Message"
-            className="contactInput"
-          />
-          <button type="submit" className="btn-primary btn rounded-md">
+          <div className="form-control col-span-2">
+            <textarea
+              {...register("message")}
+              placeholder="Message"
+              className={clsx(
+                "contactInput textarea-primary textarea",
+                errors["message"] && "textarea-error outline-error"
+              )}
+            />
+            <label className="label">
+              <span className="label-text-alt text-error">
+                {errors["message"]?.message}
+              </span>
+            </label>
+          </div>
+          <button
+            type="submit"
+            className="btn-primary btn col-span-2 rounded-md"
+          >
             Submit
           </button>
-        </form>
+        </motion.form>
       </div>
     </div>
   );

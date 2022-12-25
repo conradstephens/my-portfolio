@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Capabilities() {
   return (
-    <div className="hero mb-48 h-screen sm:mb-0">
+    <div className="hero">
       <div className="hero-content flex max-w-screen-md flex-col space-y-24">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -12,14 +12,14 @@ export default function Capabilities() {
         >
           <h3 className="text-5xl font-medium">About me</h3>
           <p className="text-md py-2 leading-8 text-base-content/75">
-            Ive been working as a{" "}
-            <span className="text-primary">professional</span> developer for the
-            past three years. Since the beginning of my professional journey,
-            Ive done remote work for several startups and collaborated with
-            talented designers in order to create large{" "}
+            {"I've been working as a "}
+            <span className="text-primary">professional</span> frontend
+            developer for the past three years. Since the beginning of my
+            professional journey, Ive done remote work for several startups and
+            collaborated with talented designers in order to create large{" "}
             <span className="text-primary">scalable</span> web applications for
             both business and consumer use. Lately I have been most interested
-            in learning and developing web3 stuff.
+            in learning and developing web3/decentralized applications.
           </p>
           <p className="text-md py-4 leading-8 text-base-content/75">
             {
@@ -28,7 +28,7 @@ export default function Capabilities() {
           </p>
         </motion.div>
 
-        <div className="relative grid aspect-square place-items-center py-32 text-base-content">
+        <div className="relative grid aspect-square place-items-center py-24 text-base-content">
           <motion.div
             initial={{
               opacity: 0,
