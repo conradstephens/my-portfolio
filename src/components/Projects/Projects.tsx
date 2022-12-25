@@ -37,7 +37,7 @@ export default function Projects() {
           >
             <ProjectCard
               title="NFT Canvas"
-              description="NFT Canvas was an idea to create a platform built around a DAO where the community can paint a drawing on a digital canvas and then mint their drawing as an NFT. I wrote the entire frontend and backend including the smart contracts in Solidity."
+              description="NFT Canvas was an idea where people can paint a drawing on a digital canvas and then mint their drawing as an NFT. I wrote the entire frontend and smart contracts in Solidity"
               imageSrc="https://gateway.pinata.cloud/ipfs/QmfGMe1Jf7CnHzsNTbbgsMfu2L1E81mnsVahxJqLW1Umbv"
               projectLink="https://daoproject-frontend-one.vercel.app"
             />

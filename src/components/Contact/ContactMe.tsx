@@ -134,7 +134,7 @@ export default function ContactMe() {
               {...register("message")}
               placeholder="Message"
               className={clsx(
-                "contactInput textarea-primary textarea",
+                "contactInput textarea-primary textarea min-h-[300px]",
                 errors["message"] && "textarea-error outline-error"
               )}
             />
