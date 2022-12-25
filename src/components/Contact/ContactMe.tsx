@@ -1,16 +1,12 @@
 import * as yup from "yup";
+import * as React from "react";
+import Link from "next/link";
+import clsx from "clsx";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { motion } from "framer-motion";
 import { yupResolver } from "@hookform/resolvers/yup";
-import Link from "next/link";
-import clsx from "clsx";
-
-type FormInputs = {
-  name: string;
-  email: string;
-  subject: string;
-  message: string;
-};
+import type { FormInputs, SlackMessageResponse } from "@/types";
+import { XMarkIcon } from "@heroicons/react/20/solid";
 
 const validationSchema = yup.object({
   name: yup.string().required("I need to know who I'm talking to!"),
@@ -26,11 +22,43 @@ export default function ContactMe() {
     handleSubmit,
     register,
     formState: { errors },
+    reset,
   } = useForm<FormInputs>({
     resolver: yupResolver(validationSchema),
   });
 
-  const onSubmit: SubmitHandler<FormInputs> = (data) => console.log(data);
+  const [loading, setLoading] = React.useState(false);
+
+  const [slackRes, setSlackRes] = React.useState<SlackMessageResponse | null>(
+    null
+  );
+
+  const hideToast = () => {
+    setSlackRes(null);
+  };
+
+  let messageTimeout: NodeJS.Timeout;
+  const onSubmit: SubmitHandler<FormInputs> = (data) => {
+    setLoading(true);
+    fetch(`${window.location.origin}/api/slackMessage`, {
+      method: "POST",
+      body: JSON.stringify(data),
+    })
+      .then(async (res) => {
+        clearTimeout(messageTimeout);
+        const data = (await res.json()) as SlackMessageResponse;
+        setSlackRes(data);
+        setTimeout(() => {
+          hideToast();
+        }, 3000);
+        setLoading(false);
+        reset();
+      })
+      .catch((e) => {
+        setLoading(false);
+        console.log(e);
+      });
+  };
   return (
     <div className="hero">
       <div className="hero-content flex w-full max-w-screen-md flex-col items-start space-y-2">
@@ -118,12 +146,32 @@ export default function ContactMe() {
           </div>
           <button
             type="submit"
-            className="btn-primary btn col-span-2 rounded-md"
+            className={clsx(
+              "btn-primary btn col-span-2 rounded-md",
+              loading && "btn-disabled loading"
+            )}
           >
-            Submit
+            {!loading && "Submit"}
           </button>
         </motion.form>
       </div>
+      {slackRes && (
+        <div className="toast">
+          <div
+            className={clsx(
+              "alert alert-success",
+              slackRes.status === "error" && "alert-error"
+            )}
+          >
+            <div className="flex items-center">
+              <span>{slackRes.message}</span>
+              <label className="btn-ghost btn-circle btn" onClick={hideToast}>
+                <XMarkIcon className="h-5 w-5" />
+              </label>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

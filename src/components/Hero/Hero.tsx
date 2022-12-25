@@ -15,9 +15,9 @@ export default function Hero() {
           >
             <h1 className="py-2 text-5xl font-medium">
               Conrad{" "}
-              <h1 className="inline-block text-primary transition-all duration-200 hover:scale-110">
+              <span className="inline-block text-primary transition-all duration-200 hover:scale-110">
                 Stephens.
-              </h1>
+              </span>
             </h1>
           </motion.div>
           <motion.div
@@ -72,7 +72,7 @@ export default function Hero() {
                 iconClassName="fa-brands fa-linkedin text-base-content/75"
               />
               <SocialLink
-                href="https://apollo5cbus.slack.com/team/UQXM0MWJY"
+                href={`https://apollo5cbus.slack.com/team/${process.env.SLACK_USER_ID}`}
                 iconClassName="fa-brands fa-slack text-base-content/75"
               />
               <SocialLink

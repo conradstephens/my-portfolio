@@ -53,7 +53,7 @@ export default function Capabilities() {
               >
                 <svg
                   className="skill-icon"
-                  stroke-width="0"
+                  strokeWidth="0"
                   role="presentation"
                   viewBox="0 0 24 24"
                   focusable="false"
@@ -89,7 +89,7 @@ export default function Capabilities() {
               >
                 <svg
                   className="skill-icon"
-                  stroke-width="0"
+                  strokeWidth="0"
                   role="presentation"
                   viewBox="0 0 24 24"
                   focusable="false"
@@ -157,7 +157,7 @@ export default function Capabilities() {
               >
                 <svg
                   className="skill-icon"
-                  stroke-width="0"
+                  strokeWidth="0"
                   role="presentation"
                   viewBox="0 0 24 24"
                   focusable="false"
@@ -193,7 +193,7 @@ export default function Capabilities() {
               >
                 <svg
                   className="skill-icon"
-                  stroke-width="0"
+                  strokeWidth="0"
                   role="presentation"
                   viewBox="0 0 24 24"
                   focusable="false"
@@ -231,7 +231,7 @@ export default function Capabilities() {
               >
                 <svg
                   className="skill-icon"
-                  stroke-width="0"
+                  strokeWidth="0"
                   role="presentation"
                   viewBox="0 0 24 24"
                   focusable="false"
