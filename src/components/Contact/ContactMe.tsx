@@ -164,6 +164,12 @@ export default function ContactMe() {
           >
             {!loading && "Submit"}
           </button>
+          <small className="col-span-2 text-base-content/75">
+            This site is protected by reCAPTCHA and the Google{" "}
+            <a href="https://policies.google.com/privacy">Privacy Policy</a> and{" "}
+            <a href="https://policies.google.com/terms">Terms of Service</a>{" "}
+            apply.
+          </small>
         </motion.form>
       </div>
       {slackRes && (
