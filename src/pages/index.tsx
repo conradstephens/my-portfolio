@@ -2,7 +2,7 @@ import { ContactMe, Navbar, Hero, About, Projects } from "@/components";
 
 export default function Index() {
   return (
-    <div className="relative z-0 h-screen scrollbar-thin scrollbar-thumb-primary">
+    <div className="relative z-0 h-screen scroll-smooth scrollbar-thin scrollbar-thumb-primary">
       <Navbar />
       {/* hero */}
       <section id="hero">
