@@ -2,6 +2,7 @@ import "../styles/globals.css";
 import { AppProps } from "next/app";
 import { SEO, ThemeProvider } from "@/components";
 import { Analytics } from "@vercel/analytics/react";
+import Script from "next/script";
 
 declare global {
   interface Window {
@@ -14,6 +15,11 @@ export default function MyApp(props: AppProps) {
   return (
     <>
       <SEO />
+      <Script
+        src="https://kit.fontawesome.com/9f3dc8ac1d.js"
+        crossOrigin="anonymous"
+        defer
+      />
       <ThemeProvider>
         <Component {...pageProps} />
         <Analytics />

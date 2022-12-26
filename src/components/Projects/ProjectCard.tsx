@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { MaterialUIIcon, NextJSIcon } from "../SVGs";
 
 interface ProjectCardProps {
   title: string;
@@ -25,6 +24,7 @@ export default function ProjectCard(props: ProjectCardProps) {
           className="transition duration-500 ease-in-out hover:scale-105 active:scale-105"
           height={500}
           width={500}
+          loading="lazy"
           style={{ objectFit: "cover", height: "100%", width: "100%" }}
           src={imageSrc}
           alt={title}

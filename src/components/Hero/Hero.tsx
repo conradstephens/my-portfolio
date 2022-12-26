@@ -9,9 +9,9 @@ export default function Hero() {
       <div className="hero-content flex max-w-screen-md flex-col md:flex-row">
         <div className="max-w-sm">
           <motion.div
-            initial={{ opacity: 0, scale: 0.3, y: 50 }}
+            initial={{ opacity: 0, y: 50 }}
             transition={{ duration: 0.3 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
           >
             <h1 className="py-2 text-5xl font-medium">
               Conrad{" "}
@@ -21,16 +21,16 @@ export default function Hero() {
             </h1>
           </motion.div>
           <motion.div
-            initial={{ opacity: 0, scale: 0.3, y: 50 }}
-            transition={{ duration: 0.3, delay: 0.15 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
+            initial={{ opacity: 0, y: 50 }}
+            transition={{ duration: 0.3, delay: 0.1 }}
+            animate={{ opacity: 1, y: 0 }}
           >
             <h2 className="py-2 text-2xl text-primary">Frontend Developer</h2>
           </motion.div>
           <motion.div
-            initial={{ opacity: 0, scale: 0.3, y: 50 }}
-            transition={{ duration: 0.3, delay: 0.3 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
+            initial={{ opacity: 0, y: 50 }}
+            transition={{ duration: 0.3, delay: 0.2 }}
+            animate={{ opacity: 1, y: 0 }}
           >
             <p className="text-md py-5 leading-8 text-base-content/75">
               Hey! Thank you for taking the time to visit my personal website.
@@ -39,53 +39,52 @@ export default function Hero() {
               <span className="text-accent">scalable</span> web applications 💻
             </p>
           </motion.div>
-          <div className="flex flex-col items-start gap-4 sm:flex-row sm:gap-0">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.3 }}
-              transition={{ duration: 0.3, delay: 0.35 }}
-              animate={{ opacity: 1, scale: 1 }}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            transition={{ duration: 0.3, delay: 0.3 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="flex flex-col items-start gap-4 sm:flex-row sm:gap-0"
+          >
+            <Link
+              href="/#contact"
+              className="btn-primary btn normal-case hover:animate-pulse"
             >
-              <Link
-                href="/#contact"
-                className="btn-primary btn normal-case hover:animate-pulse"
-              >
-                {"Let's get in touch!🚀"}
-              </Link>
-            </motion.div>
+              {"Let's get in touch!🚀"}
+            </Link>
 
-            <motion.div
-              initial={{ opacity: 0, scale: 0.3 }}
-              transition={{ duration: 0.3, delay: 0.6 }}
-              animate={{ opacity: 1, scale: 1 }}
-              className="gap-0.1 flex justify-center"
-            >
+            <div className="gap-0.1 flex justify-center">
               <SocialLink
+                label="Follow me on twitter!"
                 href="https://twitter.com/conradastephens"
                 iconClassName="fa-brands fa-twitter text-base-content/75"
               />
               <SocialLink
+                label="Check out my github!"
                 href="https://github.com/conradstephens"
                 iconClassName="fa-brands fa-github text-base-content/75"
               />
               <SocialLink
+                label="Connect with me on linkedin!"
                 href="https://www.linkedin.com/in/conrad-stephens-97033b79"
                 iconClassName="fa-brands fa-linkedin text-base-content/75"
               />
               <SocialLink
+                label="Shoot me a message on slack!"
                 href={`https://apollo5cbus.slack.com/team/${process.env.NEXT_PUBLIC_SLACK_USER_ID}`}
                 iconClassName="fa-brands fa-slack text-base-content/75"
               />
               <SocialLink
+                label="Shoot me a message on discord!"
                 href="https://discordapp.com/users/conrad#7221"
                 iconClassName="fa-brands fa-discord text-base-content/75"
               />
-            </motion.div>
-          </div>
+            </div>
+          </motion.div>
         </div>
         <motion.div
-          initial={{ opacity: 0, scale: 0 }}
-          transition={{ duration: 0.3, delay: 0.75 }}
-          animate={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, y: 50 }}
+          transition={{ duration: 0.3 }}
+          animate={{ opacity: 1, y: 0 }}
           className="relative mx-auto mt-20 h-80 w-80 overflow-hidden rounded-full bg-gradient-to-b from-primary md:mt-0"
         >
           <Image
