@@ -15,8 +15,8 @@ export default function Hero() {
           >
             <h1 className="py-2 text-5xl font-medium">
               Conrad{" "}
-              <span className="inline-block text-primary transition-all duration-200 hover:scale-110">
-                Stephens.
+              <span className="inline-block transition-all duration-200 hover:scale-110">
+                Stephens
               </span>
             </h1>
           </motion.div>
@@ -33,10 +33,10 @@ export default function Hero() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
           >
             <p className="text-md py-5 leading-8 text-base-content/75">
-              Hey! <span className="text-primary">Thank you!</span> for taking
-              the time to visit my personal website. I`m a front-end developer
-              that creates websites and{" "}
-              <span className="text-primary">web applications</span> 💻
+              Hey! Thank you for taking the time to visit my personal website.
+              As a front-end developer, I create{" "}
+              <span className="text-accent">beautiful</span> websites and{" "}
+              <span className="text-accent">scalable</span> web applications 💻
             </p>
           </motion.div>
           <div className="flex flex-col items-start gap-4 sm:flex-row sm:gap-0">

@@ -3,6 +3,7 @@ export interface FormInputs {
   email: string;
   subject: string;
   message: string;
+  honeypot?: string;
 }
 
 export interface SlackMessageResponse {

@@ -1,32 +1,15 @@
-import { NextApiHandler } from "next";
+import { NextApiResponse, NextApiRequest } from "next";
 import * as bolt from "@slack/bolt";
 import type { FormInputs, SlackMessageResponse } from "@/types";
 
-interface RecapatchResponse {
-  success: boolean;
-  challenge_ts: string;
-  hostname: string;
-  score: number;
-  action: string;
-}
-
-const handler: NextApiHandler<SlackMessageResponse> = async (req, res) => {
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse<SlackMessageResponse>
+) {
   try {
-    const { name, email, subject, message, token } = JSON.parse(
+    const { name, email, subject, message } = JSON.parse(
       req.body
-    ) as FormInputs & { token: string };
-    const recaptchaRequest = await fetch(
-      `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${token}`,
-      {
-        method: "POST",
-      }
-    );
-    const recaptchaRes = (await recaptchaRequest.json()) as RecapatchResponse;
-    // check recaptcha res
-    console.log("isHuman => ", recaptchaRes.success);
-    if (!recaptchaRes.success) {
-      return res.send({ status: "error", message: "Error sending message" });
-    }
+    ) as FormInputs;
     // initialize slack app
     const app = new bolt.App({
       signingSecret: process.env.SLACK_SIGNING_SECRET,
@@ -67,6 +50,4 @@ const handler: NextApiHandler<SlackMessageResponse> = async (req, res) => {
     console.log(e);
     res.send({ status: "error", message: "Error sending message" });
   }
-};
-
-export default handler;
+}

@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Capabilities() {
   return (
     <div className="hero">
-      <div className="hero-content flex max-w-screen-md flex-col space-y-24">
+      <div className="hero-content flex max-w-screen-md flex-col items-start">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           transition={{ duration: 0.5 }}
@@ -12,37 +12,29 @@ export default function Capabilities() {
         >
           <h3 className="text-5xl font-medium">About me</h3>
           <p className="text-md py-2 leading-8 text-base-content/75">
-            {"I've been working as a "}
-            <span className="text-primary">professional</span> frontend
-            developer for the past three years. Since the beginning of my
-            professional journey, Ive done remote work for several startups and
-            collaborated with talented designers in order to create large{" "}
-            <span className="text-primary">scalable</span> web applications for
-            both business and consumer use. Lately I have been most interested
-            in learning and developing web3/decentralized applications.
+            {"I've been working as a "}front-end developer for the past three
+            years. During which, {"I've"} architected databases that scale for
+            thousands of users, helped implement user-friendly UI/UX for several
+            companies, collaborated with talented designers, and faced
+            constructive criticism from users. Lately I have shifted toward
+            learning and developing web3/decentralized applications.
           </p>
           <p className="text-md py-4 leading-8 text-base-content/75">
-            {
-              "Below are the more common technologies I utilize in my development"
-            }
+            Below are the more common technologies I utilize in my development.
           </p>
         </motion.div>
 
-        <div className="relative grid aspect-square place-items-center py-24 text-base-content">
+        <div className="flex text-base-content">
           <motion.div
             initial={{
               opacity: 0,
-              position: "absolute",
-              top: "50%",
-              left: "50%",
-              transform: `translate(-50%, -50%)`,
-              transitionProperty: "all",
-              transitionDuration: "800ms",
-              transitionTimingFunction: "cubic-bezier(.05,.43,.25,.95)",
+              y: 50,
             }}
+            transition={{ duration: 0.3 }}
             whileInView={{
-              transform: `translate(60%, -10%) rotate(-345deg)`,
               opacity: 1,
+              rotate: 360,
+              y: 0,
             }}
           >
             <div className="tooltip" data-tip="Redux Toolkit">
@@ -68,18 +60,14 @@ export default function Capabilities() {
           <motion.div
             initial={{
               opacity: 0,
-              position: "absolute",
-              top: "50%",
-              left: "50%",
-              transform: `translate(-50%, -50%)`,
-              transitionProperty: "all",
-              transitionDuration: "800ms",
-              transitionTimingFunction: "cubic-bezier(.05,.43,.25,.95)",
+              y: 50,
             }}
             whileInView={{
-              transform: `translate(200%, -160%) rotate(-375deg)`,
               opacity: 1,
+              rotate: 360,
+              y: 0,
             }}
+            transition={{ duration: 0.5 }}
           >
             <div className="tooltip" data-tip="NextJS">
               <Link
@@ -104,18 +92,14 @@ export default function Capabilities() {
           <motion.div
             initial={{
               opacity: 0,
-              position: "absolute",
-              top: "50%",
-              left: "50%",
-              transform: `translate(-50%, -50%)`,
-              transitionProperty: "all",
-              transitionDuration: "800ms",
-              transitionTimingFunction: "cubic-bezier(.05,.43,.25,.95)",
+              y: 50,
             }}
             whileInView={{
-              transform: `translate(160%, 170%) rotate(375deg)`,
               opacity: 1,
+              rotate: 360,
+              y: 0,
             }}
+            transition={{ duration: 0.7 }}
           >
             <div className="tooltip" data-tip="ReactJS">
               <Link
@@ -136,18 +120,14 @@ export default function Capabilities() {
           <motion.div
             initial={{
               opacity: 0,
-              position: "absolute",
-              top: "50%",
-              left: "50%",
-              transform: `translate(-50%, -50%)`,
-              transitionProperty: "all",
-              transitionDuration: "800ms",
-              transitionTimingFunction: "cubic-bezier(.05,.43,.25,.95)",
+              y: 50,
             }}
             whileInView={{
-              transform: `translate(-200%, -170%) rotate(375deg)`,
               opacity: 1,
+              rotate: 360,
+              y: 0,
             }}
+            transition={{ duration: 0.8 }}
           >
             <div className="tooltip" data-tip="Typescript">
               <Link
@@ -172,18 +152,14 @@ export default function Capabilities() {
           <motion.div
             initial={{
               opacity: 0,
-              position: "absolute",
-              top: "50%",
-              left: "50%",
-              transform: `translate(-50%, -50%)`,
-              transitionProperty: "all",
-              transitionDuration: "800ms",
-              transitionTimingFunction: "cubic-bezier(.05,.43,.25,.95)",
+              y: 50,
             }}
             whileInView={{
-              transform: `translate(-280%, 140%) rotate(-375deg)`,
               opacity: 1,
+              rotate: 360,
+              y: 0,
             }}
+            transition={{ duration: 1 }}
           >
             <div className="tooltip" data-tip="TailwindCSS">
               <Link
@@ -197,8 +173,6 @@ export default function Capabilities() {
                   role="presentation"
                   viewBox="0 0 24 24"
                   focusable="false"
-                  height="1em"
-                  width="1em"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <title></title>
@@ -210,18 +184,14 @@ export default function Capabilities() {
           <motion.div
             initial={{
               opacity: 0,
-              position: "absolute",
-              top: "50%",
-              left: "50%",
-              transform: `translate(-50%, -50%)`,
-              transitionProperty: "all",
-              transitionDuration: "800ms",
-              transitionTimingFunction: "cubic-bezier(.05,.43,.25,.95)",
+              y: 50,
             }}
             whileInView={{
-              transform: `translate(-130%, 0%) rotate(-375deg)`,
               opacity: 1,
+              rotate: 360,
+              y: 0,
             }}
+            transition={{ duration: 0.8 }}
           >
             <div className="tooltip" data-tip="Framer Motion">
               <Link
