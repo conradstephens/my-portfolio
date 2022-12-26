@@ -46,7 +46,10 @@ export default function NavToggle(props: NavToggleProps) {
         )}
       >
         <label className="relative bg-transparent md:hidden" htmlFor="">
-          <NavButtons showButtons={showButtons} />
+          <NavButtons
+            showButtons={showButtons}
+            setShowButtons={setShowButtons}
+          />
         </label>
       </label>
     </>
