@@ -10,20 +10,18 @@ interface NavButtonsProps {
 interface ButtonProps {
   label: string;
   showButton: boolean;
-  id: string;
   onClick: () => void;
 }
 
 const Button = (props: ButtonProps) => {
-  const { showButton, onClick, id, label } = props;
+  const { showButton, onClick, label } = props;
   return (
     <Link
-      href={`/#${id.replace("Button", "")}`}
+      href={`/#${label.toLowerCase()}`}
       className={clsx(
         "btn-ghost btn-lg btn normal-case opacity-0 transition-opacity duration-500 ease-in-out md:btn-md xl:visible xl:opacity-100",
         showButton && "visible opacity-100"
       )}
-      id={id}
       onClick={onClick}
     >
       {label}
@@ -40,24 +38,9 @@ export default function NavButtons(props: NavButtonsProps) {
 
   return (
     <div className="flex flex-col md:flex-row">
-      <Button
-        id="aboutButton"
-        label="About"
-        showButton={showButtons}
-        onClick={hideButtons}
-      />
-      <Button
-        id="projectsButton"
-        label="Projects"
-        showButton={showButtons}
-        onClick={hideButtons}
-      />
-      <Button
-        id="contactButton"
-        label="Contact"
-        showButton={showButtons}
-        onClick={hideButtons}
-      />
+      <Button label="About" showButton={showButtons} onClick={hideButtons} />
+      <Button label="Projects" showButton={showButtons} onClick={hideButtons} />
+      <Button label="Contact" showButton={showButtons} onClick={hideButtons} />
     </div>
   );
 }

@@ -11,11 +11,21 @@ export default function SkillIcon(props: SkillIconProps) {
   return (
     <>
       <div className="tooltip hidden sm:block" data-tip={tooltipTitle}>
-        <Link href={href} target="_blank" className="skill-icon-link">
+        <Link
+          aria-label={tooltipTitle}
+          href={href}
+          target="_blank"
+          className="skill-icon-link"
+        >
           {children}
         </Link>
       </div>
-      <Link href={href} target="_blank" className="skill-icon-link sm:hidden">
+      <Link
+        aria-label={tooltipTitle}
+        href={href}
+        target="_blank"
+        className="skill-icon-link sm:hidden"
+      >
         {children}
       </Link>
     </>

@@ -14,9 +14,13 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html>
+      <Html lang="en">
         <Head>
-          <script src="https://kit.fontawesome.com/9f3dc8ac1d.js" async />
+          <link
+            rel="preload"
+            href="https://gateway.pinata.cloud/ipfs/QmTNXiXFaRfzBJbZZ5nTJJY2cxiypnbeo77W1JbmqvYmkv"
+            as="image"
+          />
         </Head>
         <body>
           <Main />
