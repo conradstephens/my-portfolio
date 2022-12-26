@@ -71,7 +71,7 @@ export default function Capabilities() {
               Redux Toolkit
             </motion.div>
           </div>
-          <div className="mr-10 flex items-center sm:mr-0">
+          <div className="flex items-center">
             <motion.div
               initial={{
                 opacity: 0,
@@ -103,7 +103,7 @@ export default function Capabilities() {
               NextJS
             </motion.div>
           </div>
-          <div className="mr-10 flex items-center sm:mr-0">
+          <div className="flex items-center sm:mr-0">
             <motion.div
               initial={{
                 opacity: 0,
@@ -135,7 +135,7 @@ export default function Capabilities() {
               ReactJS
             </motion.div>
           </div>
-          <div className="mr-10 flex items-center sm:mr-0">
+          <div className="flex items-center">
             <motion.div
               initial={{
                 opacity: 0,
@@ -205,7 +205,7 @@ export default function Capabilities() {
               Tailwind CSS
             </motion.div>
           </div>
-          <div className="mr-10 flex items-center sm:mr-0">
+          <div className="flex items-center">
             <motion.div
               initial={{
                 opacity: 0,
@@ -275,7 +275,7 @@ export default function Capabilities() {
               Framer Motion
             </motion.div>
           </div>
-          <div className="mr-10 flex items-center sm:mr-0">
+          <div className="flex items-center">
             <motion.div
               initial={{
                 opacity: 0,
