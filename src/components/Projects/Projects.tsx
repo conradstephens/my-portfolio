@@ -60,7 +60,7 @@ export default function Projects() {
           >
             <ProjectCard
               title="PickupPal"
-              description="PickupPal is a platform where people can find or create local pickup basketball games at our public recreation centers. We scraped the data from our local rec centers to retrieve the open time slots and allow users to create games for those time slots."
+              description="PickupPal is a platform where people can find or create local pickup basketball games at our public recreation centers. We used Golang, Material-UI, Firebase and NextJS"
               imageSrc="https://gateway.pinata.cloud/ipfs/QmTzFQchJgExXr13rne8BgyYSXtsihDDk4yvgCNJpYJSK1"
               projectLink="https://app.pickuppal.io/"
             />

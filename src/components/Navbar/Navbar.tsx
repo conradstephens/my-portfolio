@@ -1,6 +1,7 @@
 import * as React from "react";
 import { NavToggle, NavButtons, ThemeToggle, NavModal } from "@/components";
 import clsx from "clsx";
+import { EyeIcon } from "@heroicons/react/20/solid";
 
 export default function Navbar() {
   const [showButtons, setShowButtons] = React.useState(false);
@@ -28,7 +29,19 @@ export default function Navbar() {
           !isScrolling && "opacity-100"
         )}
       >
-        <div className="flex-1" />
+        <div className="flex-1">
+          <a
+            className="btn-primary btn-sm btn normal-case"
+            href="https://gateway.pinata.cloud/ipfs/QmTNkGfNwvC7UzUCEToVKtfReMs4yCWzBhwRRjHwdAsKqf"
+            download="conradsresume.pdf"
+            title="Download Resume"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Resume
+            <EyeIcon className="ml-1 h-5 w-5" />
+          </a>
+        </div>
         <div className="hidden sm:block">
           <NavButtons showButtons={showButtons} />
         </div>

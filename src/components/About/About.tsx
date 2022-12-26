@@ -24,7 +24,7 @@ export default function Capabilities() {
           </p>
         </motion.div>
 
-        <div className="flex text-base-content">
+        <div className="grid grid-cols-4 grid-rows-2 text-base-content sm:grid-cols-8 sm:grid-rows-1">
           <motion.div
             initial={{
               opacity: 0,
