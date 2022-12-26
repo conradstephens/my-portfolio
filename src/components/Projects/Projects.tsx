@@ -26,7 +26,7 @@ export default function Projects() {
             <ProjectCard
               title="Killerpapers"
               description="Killerpapers is a service where students can receive academic writing help from professional writers. I was responsible for both frontend and backend development on this project."
-              imageSrc="https://gateway.pinata.cloud/ipfs/QmWdFXfFeccuaP2VYrgGqdv8Cikf3GNPa1CSUQxkEwdAtk"
+              imageSrc="https://gateway.pinata.cloud/ipfs/QmNqTpPUq8JuSqdTL4BUm7ShLo5mnacAqzKLEB1FvjmJfe"
               projectLink="https://app.killerpapers.org"
             />
           </motion.div>
@@ -40,18 +40,6 @@ export default function Projects() {
               description="NFT Canvas was an idea where people can paint a drawing on a digital canvas and then mint their drawing as an NFT. I wrote the entire frontend and smart contracts in Solidity"
               imageSrc="https://gateway.pinata.cloud/ipfs/QmfGMe1Jf7CnHzsNTbbgsMfu2L1E81mnsVahxJqLW1Umbv"
               projectLink="https://daoproject-frontend-one.vercel.app"
-            />
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-            whileInView={{ opacity: 1, y: 0 }}
-          >
-            <ProjectCard
-              title="Dolores Hair Designers"
-              description="Dolores Hair Designers was one of my first ever projects. This is a marketing site for a local hair salon. "
-              imageSrc="https://gateway.pinata.cloud/ipfs/QmVur2QiQ4xqEa65oxQRp7PH2fyGNKLcwm3BoVtr8nEgTv"
-              projectLink="https://doloreshairdesigners.com"
             />
           </motion.div>
         </div>

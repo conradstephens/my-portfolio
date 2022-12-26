@@ -12,7 +12,7 @@ const validationSchema = yup.object({
   name: yup.string().required("I need to know who I'm talking to!"),
   email: yup
     .string()
-    .email("I need a valid email address!")
+    .email("I need a valid email honeypot!")
     .required("I need a way to respond to you!"),
   message: yup.string().required("What are we talking about?"),
 });
@@ -39,36 +39,28 @@ export default function ContactMe() {
 
   let messageTimeout: NodeJS.Timeout;
   const onSubmit: SubmitHandler<FormInputs> = (data) => {
-    if (window.grecaptcha === undefined) {
-      window.grecaptcha = {};
+    if (data.honeypot) {
+      return setSlackRes({ message: "No bots allowed", status: "error" });
     }
     setLoading(true);
-    window.grecaptcha.ready(function () {
-      window.grecaptcha
-        .execute(process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY, {
-          action: "submit",
-        })
-        .then(function (token: string) {
-          fetch(`${window.location.origin}/api/slackMessage`, {
-            method: "POST",
-            body: JSON.stringify({ ...data, token }),
-          })
-            .then(async (res) => {
-              clearTimeout(messageTimeout);
-              const data = (await res.json()) as SlackMessageResponse;
-              setSlackRes(data);
-              setTimeout(() => {
-                hideToast();
-              }, 3000);
-              setLoading(false);
-              reset();
-            })
-            .catch((e) => {
-              setLoading(false);
-              console.log(e);
-            });
-        });
-    });
+    fetch(`${window.location.origin}/api/slackMessage`, {
+      method: "POST",
+      body: JSON.stringify({ ...data }),
+    })
+      .then(async (res) => {
+        clearTimeout(messageTimeout);
+        const data = (await res.json()) as SlackMessageResponse;
+        setSlackRes(data);
+        setTimeout(() => {
+          hideToast();
+        }, 3000);
+        setLoading(false);
+        reset();
+      })
+      .catch((e) => {
+        setLoading(false);
+        console.log(e);
+      });
   };
   return (
     <div className="hero">
@@ -80,14 +72,15 @@ export default function ContactMe() {
         >
           <h3 className="text-5xl font-medium">Contact</h3>
           <p className="text-md py-2 leading-8 text-base-content/75">
-            {"Let's connect! Please feel free to message me on any of my "}
+            Please feel free to message me on any of my{" "}
             <Link
               href="/#hero"
               className="btn-link btn p-0 lowercase text-primary no-underline hover:animate-pulse"
             >
               social media
             </Link>{" "}
-            accounts or send me a message below!
+            accounts or send me a message below! <br />
+            {`Let's connect!`}
           </p>
         </motion.div>
 
@@ -98,6 +91,11 @@ export default function ContactMe() {
           onSubmit={handleSubmit(onSubmit)}
           className="grid w-full grid-cols-2 gap-2"
         >
+          <input
+            {...register("honeypot")}
+            type="text"
+            className="invisible col-span-2 h-0"
+          />
           <div className="form-control col-span-2 sm:col-span-1">
             <input
               {...register("name")}
@@ -140,6 +138,7 @@ export default function ContactMe() {
             className="contactInput col-span-2"
             type="text"
           />
+
           <div className="form-control col-span-2">
             <textarea
               {...register("message")}
@@ -164,12 +163,6 @@ export default function ContactMe() {
           >
             {!loading && "Submit"}
           </button>
-          <small className="col-span-2 text-base-content/75">
-            This site is protected by reCAPTCHA and the Google{" "}
-            <a href="https://policies.google.com/privacy">Privacy Policy</a> and{" "}
-            <a href="https://policies.google.com/terms">Terms of Service</a>{" "}
-            apply.
-          </small>
         </motion.form>
       </div>
       {slackRes && (
