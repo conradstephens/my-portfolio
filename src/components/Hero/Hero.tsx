@@ -35,7 +35,7 @@ export default function Hero() {
             <p className="text-md py-5 leading-8 text-base-content/75">
               Hey! Thank you for taking the time to visit my personal website.
               As a front-end developer, I create{" "}
-              <span className="text-accent">beautiful</span> websites and{" "}
+              <span className="text-accent">eye-catching</span> websites and{" "}
               <span className="text-accent">scalable</span> web applications 💻
             </p>
           </motion.div>
