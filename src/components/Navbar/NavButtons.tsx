@@ -13,10 +13,8 @@ const Button = (props: ButtonProps) => {
     <Link
       href={`/#${id.replace("Button", "")}`}
       className={clsx(
-        "btn-ghost btn normal-case opacity-0 transition-opacity duration-500 ease-in-out xl:visible",
-        showButton
-          ? "visible opacity-100"
-          : " visible md:invisible xl:opacity-100"
+        "btn-ghost btn-lg btn normal-case opacity-0 transition-opacity duration-500 ease-in-out md:btn-md xl:visible xl:opacity-100",
+        showButton && "visible opacity-100"
       )}
       id={id}
     >
@@ -28,7 +26,7 @@ const Button = (props: ButtonProps) => {
 export default function NavButtons(props: { showButtons: boolean }) {
   const { showButtons } = props;
   return (
-    <div className="flex flex-col sm:flex-row">
+    <div className="flex flex-col md:flex-row">
       <Button id="aboutButton" label="About" showButton={showButtons} />
       <Button id="projectsButton" label="Projects" showButton={showButtons} />
       <Button id="contactButton" label="Contact" showButton={showButtons} />

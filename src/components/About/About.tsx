@@ -13,9 +13,9 @@ export default function Capabilities() {
           <h3 className="text-5xl font-medium">About me</h3>
           <p className="text-md py-2 leading-8 text-base-content/75">
             {"I've been working as a "}front-end developer for the past three
-            years. During which, {"I've"} architected databases that scale for
-            thousands of users, helped implement user-friendly UI/UX for several
-            companies, collaborated with talented designers, and faced
+            years. During this time, {"I've"} architected databases that scale
+            for thousands of users, helped implement user-friendly UI/UX for
+            several companies, collaborated with talented designers, and faced
             constructive criticism from users. Lately I have shifted toward
             learning and developing web3/decentralized applications.
           </p>
@@ -24,7 +24,7 @@ export default function Capabilities() {
           </p>
         </motion.div>
 
-        <div className="flex text-base-content">
+        <div className="grid grid-cols-4 grid-rows-2 text-base-content sm:grid-cols-8 sm:grid-rows-1">
           <motion.div
             initial={{
               opacity: 0,
