@@ -43,7 +43,10 @@ export default function Navbar() {
           </a>
         </div>
         <div className="hidden md:block">
-          <NavButtons showButtons={showButtons} />
+          <NavButtons
+            showButtons={showButtons}
+            setShowButtons={setShowButtons}
+          />
         </div>
         <div className="flex-none">
           <ThemeToggle />

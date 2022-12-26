@@ -4,8 +4,18 @@ import { Navbar, NavButtons, NavToggle } from "./Navbar";
 import { SocialLink } from "./Social";
 import { ContactMe } from "./Contact";
 import { Hero } from "./Hero";
-import { About } from "./About";
+import { About, SkillIcon } from "./About";
 import { Projects, ProjectsCard } from "./Projects";
+import {
+  FirebaseIcon,
+  TailwindCSSIcon,
+  MaterialUIIcon,
+  FramerMotionIcon,
+  NextJSIcon,
+  TypescriptIcon,
+  ReduxToolkitIcon,
+  ReactJSIcon,
+} from "./SVGs";
 
 export {
   SEO,
@@ -20,4 +30,13 @@ export {
   About,
   Projects,
   ProjectsCard,
+  FirebaseIcon,
+  TailwindCSSIcon,
+  MaterialUIIcon,
+  FramerMotionIcon,
+  NextJSIcon,
+  TypescriptIcon,
+  ReduxToolkitIcon,
+  ReactJSIcon,
+  SkillIcon,
 };
