@@ -1,5 +1,14 @@
 import { motion } from "framer-motion";
-import ProjectCard from "./ProjectCard";
+import {
+  ProjectCard,
+  MaterialUIIcon,
+  NextJSIcon,
+  TypescriptIcon,
+  FirebaseIcon,
+  SolidityIcon,
+  GolangIcon,
+  ReduxToolkitIcon,
+} from "@/components";
 
 export default function Projects() {
   return (
@@ -24,9 +33,16 @@ export default function Projects() {
           >
             <ProjectCard
               title="Killerpapers"
-              description="Killerpapers is a service where students can receive academic writing help from professional writers. I was responsible for both frontend and backend development on this project."
+              description="Killerpapers is a service where students can receive academic writing help from professional writers."
               imageSrc="https://gateway.pinata.cloud/ipfs/QmNqTpPUq8JuSqdTL4BUm7ShLo5mnacAqzKLEB1FvjmJfe"
               projectLink="https://app.killerpapers.org"
+              skills={[
+                TypescriptIcon,
+                NextJSIcon,
+                MaterialUIIcon,
+                FirebaseIcon,
+                ReduxToolkitIcon,
+              ]}
             />
           </motion.div>
           <motion.div
@@ -36,9 +52,15 @@ export default function Projects() {
           >
             <ProjectCard
               title="NFT Canvas"
-              description="NFT Canvas is an idea where people can paint a drawing on a digital canvas and then mint their drawing as an NFT. I wrote the entire frontend and smart contracts in Solidity"
+              description="NFT Canvas is an idea where people can paint a drawing on a digital canvas and then mint their drawing as an NFT."
               imageSrc="https://gateway.pinata.cloud/ipfs/QmfGMe1Jf7CnHzsNTbbgsMfu2L1E81mnsVahxJqLW1Umbv"
               projectLink="https://daoproject-frontend-one.vercel.app"
+              skills={[
+                TypescriptIcon,
+                NextJSIcon,
+                MaterialUIIcon,
+                SolidityIcon,
+              ]}
             />
           </motion.div>
           <motion.div
@@ -48,9 +70,15 @@ export default function Projects() {
           >
             <ProjectCard
               title="Moments"
-              description="Moments is a platform where gamers can get upload hightlights of their gameplay and get highlight tapes auto generated in return."
+              description="Moments is a platform where gamers upload hightlights of their gameplay and recieve an auto generated highlight tape."
               imageSrc="https://gateway.pinata.cloud/ipfs/QmUm7DbuNnoXd3uZdNjrtexNfjyT7jcRumxDYyXJetqtbw"
               projectLink="https://ggreelmoments.com/"
+              skills={[
+                TypescriptIcon,
+                NextJSIcon,
+                MaterialUIIcon,
+                FirebaseIcon,
+              ]}
             />
           </motion.div>
           <motion.div
@@ -60,9 +88,17 @@ export default function Projects() {
           >
             <ProjectCard
               title="PickupPal"
-              description="PickupPal is a platform where people can find or create local pickup basketball games at our public recreation centers. We used Golang, Material-UI, Firebase and NextJS"
+              description="PickupPal is a platform where people can find or create local pickup basketball games at public recreation centers."
               imageSrc="https://gateway.pinata.cloud/ipfs/QmTzFQchJgExXr13rne8BgyYSXtsihDDk4yvgCNJpYJSK1"
               projectLink="https://app.pickuppal.io/"
+              skills={[
+                TypescriptIcon,
+                NextJSIcon,
+                MaterialUIIcon,
+                FirebaseIcon,
+                GolangIcon,
+                ReduxToolkitIcon,
+              ]}
             />
           </motion.div>
         </div>

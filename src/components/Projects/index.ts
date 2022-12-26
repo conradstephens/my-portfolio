@@ -1,4 +1,4 @@
 import Projects from "./Projects";
-import ProjectsCard from "./ProjectCard";
+import ProjectCard from "./ProjectCard";
 
-export { Projects, ProjectsCard };
+export { Projects, ProjectCard };

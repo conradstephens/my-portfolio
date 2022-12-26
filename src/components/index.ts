@@ -5,7 +5,7 @@ import { SocialLink } from "./Social";
 import { ContactMe } from "./Contact";
 import { Hero } from "./Hero";
 import { About, SkillIcon } from "./About";
-import { Projects, ProjectsCard } from "./Projects";
+import { Projects, ProjectCard } from "./Projects";
 import {
   FirebaseIcon,
   TailwindCSSIcon,
@@ -15,6 +15,8 @@ import {
   TypescriptIcon,
   ReduxToolkitIcon,
   ReactJSIcon,
+  SolidityIcon,
+  GolangIcon,
 } from "./SVGs";
 
 export {
@@ -29,7 +31,7 @@ export {
   Hero,
   About,
   Projects,
-  ProjectsCard,
+  ProjectCard,
   FirebaseIcon,
   TailwindCSSIcon,
   MaterialUIIcon,
@@ -38,5 +40,7 @@ export {
   TypescriptIcon,
   ReduxToolkitIcon,
   ReactJSIcon,
+  SolidityIcon,
+  GolangIcon,
   SkillIcon,
 };
