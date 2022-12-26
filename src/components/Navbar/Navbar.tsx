@@ -1,5 +1,5 @@
 import * as React from "react";
-import { NavToggle, NavButtons, ThemeToggle, NavModal } from "@/components";
+import { NavToggle, NavButtons, ThemeToggle } from "@/components";
 import clsx from "clsx";
 import { EyeIcon } from "@heroicons/react/20/solid";
 
@@ -42,7 +42,7 @@ export default function Navbar() {
             <EyeIcon className="ml-1 h-5 w-5" />
           </a>
         </div>
-        <div className="hidden sm:block">
+        <div className="hidden md:block">
           <NavButtons showButtons={showButtons} />
         </div>
         <div className="flex-none">
@@ -55,7 +55,6 @@ export default function Navbar() {
           />
         </div>
       </div>
-      <NavModal open={showButtons} setOpen={setShowButtons} />
     </>
   );
 }
