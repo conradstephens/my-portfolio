@@ -30,7 +30,6 @@ export default function NavToggle(props: NavToggleProps) {
         <Bars3Icon className="swap-off h-5 w-5" />
       </label>
 
-      {/* Put this part before </body> tag */}
       <input
         type="checkbox"
         checked={showButtons}

@@ -6,6 +6,8 @@ import ReactJSIcon from "./ReactJSIcon";
 import TailwindCSSIcon from "./TailwindCSSIcon";
 import TypescriptIcon from "./TypescriptIcon";
 import ReduxToolkitIcon from "./ReduxToolkitIcon";
+import SolidityIcon from "./SolidityIcon";
+import GolangIcon from "./GolangIcon";
 
 export {
   FirebaseIcon,
@@ -16,4 +18,6 @@ export {
   TailwindCSSIcon,
   TypescriptIcon,
   ReduxToolkitIcon,
+  SolidityIcon,
+  GolangIcon,
 };
