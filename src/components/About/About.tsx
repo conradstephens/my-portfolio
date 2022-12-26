@@ -127,7 +127,7 @@ export default function Capabilities() {
               rotate: 360,
               y: 0,
             }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.9 }}
           >
             <div className="tooltip" data-tip="Typescript">
               <Link
@@ -159,7 +159,7 @@ export default function Capabilities() {
               rotate: 360,
               y: 0,
             }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 1.1 }}
           >
             <div className="tooltip" data-tip="TailwindCSS">
               <Link
@@ -191,7 +191,37 @@ export default function Capabilities() {
               rotate: 360,
               y: 0,
             }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 1.3 }}
+          >
+            <div className="tooltip" data-tip="Firebase">
+              <Link
+                className="skill-icon-link"
+                target="_blank"
+                href="https://firebase.google.com/"
+              >
+                <svg
+                  className="skill-icon"
+                  width="200px"
+                  height="200px"
+                  viewBox="0 0 32 32"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M5.188 20.896l3.151-20.281c0.104-0.688 1.031-0.844 1.354-0.229l3.391 6.359zM27.578 25.818l-3-18.667c-0.099-0.578-0.807-0.802-1.224-0.391l-18.932 19.057 10.474 5.906c0.656 0.37 1.458 0.37 2.115 0zM19.068 9.531l-2.427-4.646c-0.271-0.516-1.010-0.516-1.281 0l-10.651 19.094z"></path>{" "}
+                </svg>
+              </Link>
+            </div>
+          </motion.div>
+          <motion.div
+            initial={{
+              opacity: 0,
+              y: 50,
+            }}
+            whileInView={{
+              opacity: 1,
+              rotate: 360,
+              y: 0,
+            }}
+            transition={{ duration: 1.5 }}
           >
             <div className="tooltip" data-tip="Framer Motion">
               <Link
@@ -211,6 +241,36 @@ export default function Capabilities() {
                 >
                   <title></title>
                   <path d="M4 0h16v8h-8zM4 8h8l8 8H4zM4 16h8v8z"></path>
+                </svg>
+              </Link>
+            </div>
+          </motion.div>
+          <motion.div
+            initial={{
+              opacity: 0,
+              y: 50,
+            }}
+            whileInView={{
+              opacity: 1,
+              rotate: 360,
+              y: 0,
+            }}
+            transition={{ duration: 1.7 }}
+          >
+            <div className="tooltip" data-tip="Material UI">
+              <Link
+                className="skill-icon-link"
+                target="_blank"
+                href="https://mui.com/core/"
+              >
+                <svg
+                  className="skill-icon"
+                  viewBox="0 0 24 24"
+                  role="img"
+                  xmlns="http://www.w3.org/2000/svg"
+                  stroke-width="0"
+                >
+                  <path d="M0 2.475v10.39l3 1.733V7.67l6 3.465 6-3.465v3.465l-6 3.463v3.464l6 3.463 9-5.195V9.402l-3 1.733v3.463l-6 3.464-3-1.732 6-3.465V2.475L9 7.67 0 2.475zm24 0-3 1.73V7.67l3-1.732V2.474z"></path>
                 </svg>
               </Link>
             </div>
