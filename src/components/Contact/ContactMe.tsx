@@ -71,11 +71,11 @@ export default function ContactMe() {
           whileInView={{ opacity: 1, y: 0 }}
         >
           <h3 className="text-5xl font-medium">Contact</h3>
-          <p className="text-md text-base-content/75">
+          <p className="text-md py-2 leading-8 text-base-content/75">
             Please feel free to message me on any of my{" "}
             <Link
               href="/#hero"
-              className="btn-link btn p-0 lowercase text-primary no-underline hover:animate-pulse"
+              className="cursor-pointer border-b-[1px] border-b-transparent text-primary transition-all duration-200 ease-in-out hover:border-b-primary"
             >
               social media
             </Link>{" "}
