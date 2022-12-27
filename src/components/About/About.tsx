@@ -22,7 +22,7 @@ export default function Capabilities() {
         >
           <h3 className="text-5xl font-medium">About me</h3>
           <p className="text-md py-2 leading-8 text-base-content/75">
-            {"I've been working as a "}front-end developer for the past three
+            {"I've been working as a "}full-stack developer for the past three
             years. During this time, {"I've"} architected databases that scale
             for thousands of users, helped implement user-friendly UI/UX for
             several companies, collaborated with talented designers, and faced

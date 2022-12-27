@@ -32,7 +32,7 @@ export default function Navbar() {
         <div className="flex-1">
           <a
             className="btn-primary btn-sm btn normal-case"
-            href="https://gateway.pinata.cloud/ipfs/QmTNkGfNwvC7UzUCEToVKtfReMs4yCWzBhwRRjHwdAsKqf"
+            href="https://gateway.pinata.cloud/ipfs/QmUdtp417fYcD2u2yqnVntoZHkGom8aQV5z72MtuvuDR82"
             download="conradsresume.pdf"
             title="Download Resume"
             target="_blank"

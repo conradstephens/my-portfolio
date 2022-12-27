@@ -7,7 +7,7 @@ export default function Hero() {
   return (
     <div className="hero mt-12 sm:h-screen">
       <div className="hero-content flex max-w-screen-md flex-col md:flex-row">
-        <div className="max-w-sm">
+        <div className="max-w-[388px]">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             transition={{ duration: 0.3 }}
@@ -25,7 +25,7 @@ export default function Hero() {
             transition={{ duration: 0.3, delay: 0.1 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            <h2 className="py-2 text-2xl text-primary">Frontend Developer</h2>
+            <h2 className="py-2 text-2xl text-primary">FullStack Developer</h2>
           </motion.div>
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -34,7 +34,7 @@ export default function Hero() {
           >
             <p className="text-md py-5 leading-8 text-base-content/75">
               Hey! Thank you for taking the time to visit my personal website.
-              As a front-end developer, I create{" "}
+              As a full-stack developer, I create{" "}
               <span className="text-accent">eye-catching</span> websites and{" "}
               <span className="text-accent">scalable</span> web applications 💻
             </p>

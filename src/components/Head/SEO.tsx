@@ -1,9 +1,9 @@
 import Head from "next/head";
 
 export default function DefaultSEO() {
-  const title = "Conrad Stephens | Frontend Developer";
+  const title = "Conrad Stephens | FullStack Developer";
   const description =
-    "A professional frontend developer creating eye-catching websites and scalable web applications";
+    "A professional full-stack developer creating eye-catching websites and scalable web applications";
   const url = "https://conradstephens.dev";
   const twitterHandle = "@conradastephens";
   return (
