@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import Link from "next/link";
 
 interface ProjectCardProps {
@@ -13,7 +13,7 @@ interface ProjectCardProps {
 export default function ProjectCard(props: ProjectCardProps) {
   const { title, description, imageSrc, projectLink, skills } = props;
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0, y: 50 }}
       transition={{ duration: 0.5, delay: 0.2 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -48,6 +48,6 @@ export default function ProjectCard(props: ProjectCardProps) {
           </Link>
         </div>
       </div>
-    </motion.div>
+    </m.div>
   );
 }

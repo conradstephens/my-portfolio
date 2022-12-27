@@ -3,7 +3,7 @@ import * as React from "react";
 import Link from "next/link";
 import clsx from "clsx";
 import { useForm, SubmitHandler } from "react-hook-form";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { yupResolver } from "@hookform/resolvers/yup";
 import type { FormInputs, SlackMessageResponse } from "@/types";
 import { XMarkIcon } from "@heroicons/react/20/solid";
@@ -65,7 +65,7 @@ export default function ContactMe() {
   return (
     <div className="hero">
       <div className="hero-content flex w-full max-w-screen-md flex-col items-start space-y-2">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 50 }}
           transition={{ duration: 0.5 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -82,9 +82,9 @@ export default function ContactMe() {
             accounts or send me a message below! <br />
             {`Let's connect!`}
           </p>
-        </motion.div>
+        </m.div>
 
-        <motion.form
+        <m.form
           initial={{ opacity: 0, y: 50 }}
           transition={{ duration: 0.5, delay: 0.1 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -163,7 +163,7 @@ export default function ContactMe() {
           >
             {!loading && "Submit"}
           </button>
-        </motion.form>
+        </m.form>
       </div>
       {slackRes && (
         <div className="toast">

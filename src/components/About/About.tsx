@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import {
   SkillIcon,
   NextJSIcon,
@@ -11,11 +11,11 @@ import {
   MaterialUIIcon,
 } from "@/components";
 
-export default function Capabilities() {
+export default function About() {
   return (
     <div className="hero">
       <div className="hero-content flex max-w-screen-md flex-col items-start">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 50 }}
           transition={{ duration: 0.5 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -32,11 +32,11 @@ export default function Capabilities() {
           <p className="text-md py-4 leading-8 text-base-content/75">
             Below are the more common technologies I utilize in my development.
           </p>
-        </motion.div>
+        </m.div>
 
         <div className="grid grid-cols-2 grid-rows-4 text-base-content sm:grid-cols-8 sm:grid-rows-1 sm:space-x-0">
           <div className="mr-10 flex items-center sm:mr-0">
-            <motion.div
+            <m.div
               initial={{
                 opacity: 0,
                 y: 50,
@@ -54,8 +54,8 @@ export default function Capabilities() {
               >
                 <ReduxToolkitIcon className="skill-icon" />
               </SkillIcon>
-            </motion.div>
-            <motion.div
+            </m.div>
+            <m.div
               initial={{
                 opacity: 0,
                 y: 50,
@@ -68,10 +68,10 @@ export default function Capabilities() {
               className="sm:hidden"
             >
               Redux Toolkit
-            </motion.div>
+            </m.div>
           </div>
           <div className="flex items-center">
-            <motion.div
+            <m.div
               initial={{
                 opacity: 0,
                 y: 50,
@@ -86,8 +86,8 @@ export default function Capabilities() {
               <SkillIcon href="https://nextjs.org/" tooltipTitle="NextJS">
                 <NextJSIcon className="skill-icon" />
               </SkillIcon>
-            </motion.div>
-            <motion.div
+            </m.div>
+            <m.div
               initial={{
                 opacity: 0,
                 y: 50,
@@ -100,10 +100,10 @@ export default function Capabilities() {
               className="sm:hidden"
             >
               NextJS
-            </motion.div>
+            </m.div>
           </div>
           <div className="flex items-center sm:mr-0">
-            <motion.div
+            <m.div
               initial={{
                 opacity: 0,
                 y: 50,
@@ -118,8 +118,8 @@ export default function Capabilities() {
               <SkillIcon href="https://reactjs.org/" tooltipTitle="ReactJS">
                 <ReactJSIcon className="skill-icon" />
               </SkillIcon>
-            </motion.div>
-            <motion.div
+            </m.div>
+            <m.div
               initial={{
                 opacity: 0,
                 y: 50,
@@ -132,10 +132,10 @@ export default function Capabilities() {
               className="sm:hidden"
             >
               ReactJS
-            </motion.div>
+            </m.div>
           </div>
           <div className="flex items-center">
-            <motion.div
+            <m.div
               initial={{
                 opacity: 0,
                 y: 50,
@@ -153,8 +153,8 @@ export default function Capabilities() {
               >
                 <TypescriptIcon className="skill-icon" />
               </SkillIcon>
-            </motion.div>
-            <motion.div
+            </m.div>
+            <m.div
               initial={{
                 opacity: 0,
                 y: 50,
@@ -167,10 +167,10 @@ export default function Capabilities() {
               className="sm:hidden"
             >
               Typescript
-            </motion.div>
+            </m.div>
           </div>
           <div className="mr-10 flex items-center sm:mr-0">
-            <motion.div
+            <m.div
               initial={{
                 opacity: 0,
                 y: 50,
@@ -188,8 +188,8 @@ export default function Capabilities() {
               >
                 <TailwindCSSIcon className="skill-icon" />
               </SkillIcon>
-            </motion.div>
-            <motion.div
+            </m.div>
+            <m.div
               initial={{
                 opacity: 0,
                 y: 50,
@@ -202,10 +202,10 @@ export default function Capabilities() {
               className="sm:hidden"
             >
               Tailwind CSS
-            </motion.div>
+            </m.div>
           </div>
           <div className="flex items-center">
-            <motion.div
+            <m.div
               initial={{
                 opacity: 0,
                 y: 50,
@@ -223,8 +223,8 @@ export default function Capabilities() {
               >
                 <FirebaseIcon className="skill-icon" />
               </SkillIcon>
-            </motion.div>
-            <motion.div
+            </m.div>
+            <m.div
               initial={{
                 opacity: 0,
                 y: 50,
@@ -237,10 +237,10 @@ export default function Capabilities() {
               className="sm:hidden"
             >
               Firebase
-            </motion.div>
+            </m.div>
           </div>
           <div className="mr-10 flex items-center sm:mr-0">
-            <motion.div
+            <m.div
               initial={{
                 opacity: 0,
                 y: 50,
@@ -258,8 +258,8 @@ export default function Capabilities() {
               >
                 <FramerMotionIcon className="skill-icon" />
               </SkillIcon>
-            </motion.div>
-            <motion.div
+            </m.div>
+            <m.div
               initial={{
                 opacity: 0,
                 y: 50,
@@ -271,11 +271,11 @@ export default function Capabilities() {
               }}
               className="sm:hidden"
             >
-              Framer Motion
-            </motion.div>
+              Framer m
+            </m.div>
           </div>
           <div className="flex items-center">
-            <motion.div
+            <m.div
               initial={{
                 opacity: 0,
                 y: 50,
@@ -293,8 +293,8 @@ export default function Capabilities() {
               >
                 <MaterialUIIcon className="skill-icon" />
               </SkillIcon>
-            </motion.div>
-            <motion.div
+            </m.div>
+            <m.div
               initial={{
                 opacity: 0,
                 y: 50,
@@ -307,7 +307,7 @@ export default function Capabilities() {
               className="sm:hidden"
             >
               Material UI
-            </motion.div>
+            </m.div>
           </div>
         </div>
       </div>

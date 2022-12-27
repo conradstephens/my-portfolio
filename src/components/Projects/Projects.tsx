@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import {
   ProjectCard,
   MaterialUIIcon,
@@ -14,7 +14,7 @@ export default function Projects() {
   return (
     <div className="hero">
       <div className="hero-content flex max-w-screen-md flex-col items-start">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 50 }}
           transition={{ duration: 0.5 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -23,10 +23,10 @@ export default function Projects() {
           <p className="text-md py-2 leading-8 text-base-content/75">
             Below are some of my past and present projects I have developed.
           </p>
-        </motion.div>
+        </m.div>
 
         <div className="space-y-5">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 50 }}
             transition={{ duration: 0.5, delay: 0.3 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -44,8 +44,8 @@ export default function Projects() {
                 ReduxToolkitIcon,
               ]}
             />
-          </motion.div>
-          <motion.div
+          </m.div>
+          <m.div
             initial={{ opacity: 0, y: 50 }}
             transition={{ duration: 0.5, delay: 0.3 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -62,8 +62,8 @@ export default function Projects() {
                 SolidityIcon,
               ]}
             />
-          </motion.div>
-          <motion.div
+          </m.div>
+          <m.div
             initial={{ opacity: 0, y: 50 }}
             transition={{ duration: 0.5, delay: 0.3 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -80,8 +80,8 @@ export default function Projects() {
                 FirebaseIcon,
               ]}
             />
-          </motion.div>
-          <motion.div
+          </m.div>
+          <m.div
             initial={{ opacity: 0, y: 50 }}
             transition={{ duration: 0.5, delay: 0.3 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -100,7 +100,7 @@ export default function Projects() {
                 ReduxToolkitIcon,
               ]}
             />
-          </motion.div>
+          </m.div>
         </div>
       </div>
     </div>
