@@ -71,7 +71,7 @@ export default function ContactMe() {
           whileInView={{ opacity: 1, y: 0 }}
         >
           <h3 className="text-5xl font-medium">Contact</h3>
-          <p className="text-md py-2 leading-8 text-base-content/75">
+          <p className="text-md text-base-content/75">
             Please feel free to message me on any of my{" "}
             <Link
               href="/#hero"

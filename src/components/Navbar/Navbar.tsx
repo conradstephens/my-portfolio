@@ -1,7 +1,6 @@
 import * as React from "react";
 import { NavToggle, NavButtons, ThemeToggle } from "@/components";
 import clsx from "clsx";
-import { EyeIcon } from "@heroicons/react/20/solid";
 
 export default function Navbar() {
   const [showButtons, setShowButtons] = React.useState(false);
@@ -31,15 +30,16 @@ export default function Navbar() {
       >
         <div className="flex-1">
           <a
-            className="btn-primary btn-sm btn normal-case"
+            className="btn-link btn-sm btn normal-case no-underline"
             href="https://gateway.pinata.cloud/ipfs/QmUdtp417fYcD2u2yqnVntoZHkGom8aQV5z72MtuvuDR82"
             download="conradsresume.pdf"
             title="Download Resume"
             target="_blank"
             rel="noreferrer"
           >
-            Resume
-            <EyeIcon className="ml-1 h-5 w-5" />
+            <span className="border-b-transparent transition duration-300 ease-in-out hover:border-b-[1px] hover:border-b-primary">
+              {"Here's my resume!"}
+            </span>
           </a>
         </div>
         <div className="hidden md:block">
