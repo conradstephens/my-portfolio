@@ -8,6 +8,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import type { FormInputs, SlackMessageResponse } from "@/types";
 import { XMarkIcon } from "@heroicons/react/20/solid";
 
+// form validation schema
 const validationSchema = yup.object({
   name: yup.string().required("I need to know who I'm talking to!"),
   email: yup
@@ -27,17 +28,20 @@ export default function ContactMe() {
     resolver: yupResolver(validationSchema),
   });
 
+  // loading state for sending slack message
   const [loading, setLoading] = React.useState(false);
-
+  // state for slack response
   const [slackRes, setSlackRes] = React.useState<SlackMessageResponse | null>(
     null
   );
 
+  // hide snackbar
   const hideToast = () => {
     setSlackRes(null);
   };
 
   let messageTimeout: NodeJS.Timeout;
+  // send slack message
   const onSubmit: SubmitHandler<FormInputs> = (data) => {
     if (data.honeypot) {
       return setSlackRes({ message: "No bots allowed", status: "error" });

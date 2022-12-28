@@ -5,12 +5,6 @@ import { Analytics } from "@vercel/analytics/react";
 import { LazyMotion, domAnimation } from "framer-motion";
 import Script from "next/script";
 
-declare global {
-  interface Window {
-    grecaptcha?: any;
-  }
-}
-
 export default function MyApp(props: AppProps) {
   const { Component, pageProps } = props;
   return (
