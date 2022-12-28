@@ -4,7 +4,7 @@ import { Navbar, NavButtons, NavToggle } from "./Navbar";
 import { SocialLink } from "./Social";
 import { ContactMe } from "./Contact";
 import { Hero } from "./Hero";
-import { About, SkillIcon } from "./About";
+import { About, SkillIcon, IconMotionDiv } from "./About";
 import { Projects, ProjectCard } from "./Projects";
 import {
   FirebaseIcon,
@@ -43,4 +43,5 @@ export {
   SolidityIcon,
   GolangIcon,
   SkillIcon,
+  IconMotionDiv,
 };

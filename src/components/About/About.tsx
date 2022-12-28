@@ -9,6 +9,7 @@ import {
   FirebaseIcon,
   FramerMotionIcon,
   MaterialUIIcon,
+  IconMotionDiv,
 } from "@/components";
 
 export default function About() {
@@ -36,278 +37,102 @@ export default function About() {
 
         <div className="grid grid-cols-2 grid-rows-4 text-base-content sm:grid-cols-8 sm:grid-rows-1 sm:space-x-0">
           <div className="mr-10 flex items-center sm:mr-0">
-            <m.div
-              initial={{
-                opacity: 0,
-                y: 50,
-              }}
-              transition={{ duration: 0.3 }}
-              whileInView={{
-                opacity: 1,
-                rotate: 360,
-                y: 0,
-              }}
-            >
+            <IconMotionDiv duration={0.3}>
               <SkillIcon
                 href="https://redux-toolkit.js.org/"
                 tooltipTitle="Redux Toolkit"
               >
                 <ReduxToolkitIcon className="skill-icon" />
               </SkillIcon>
-            </m.div>
-            <m.div
-              initial={{
-                opacity: 0,
-                y: 50,
-              }}
-              transition={{ duration: 0.3 }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-              }}
-              className="sm:hidden"
-            >
+            </IconMotionDiv>
+            <IconMotionDiv duration={0.3} className="sm:hidden">
               Redux Toolkit
-            </m.div>
+            </IconMotionDiv>
           </div>
           <div className="flex items-center">
-            <m.div
-              initial={{
-                opacity: 0,
-                y: 50,
-              }}
-              whileInView={{
-                opacity: 1,
-                rotate: 360,
-                y: 0,
-              }}
-              transition={{ duration: 0.5 }}
-            >
+            <IconMotionDiv duration={0.5}>
               <SkillIcon href="https://nextjs.org/" tooltipTitle="NextJS">
                 <NextJSIcon className="skill-icon" />
               </SkillIcon>
-            </m.div>
-            <m.div
-              initial={{
-                opacity: 0,
-                y: 50,
-              }}
-              transition={{ duration: 0.5 }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-              }}
-              className="sm:hidden"
-            >
+            </IconMotionDiv>
+            <IconMotionDiv duration={0.5} className="sm:hidden">
               NextJS
-            </m.div>
+            </IconMotionDiv>
           </div>
           <div className="flex items-center sm:mr-0">
-            <m.div
-              initial={{
-                opacity: 0,
-                y: 50,
-              }}
-              whileInView={{
-                opacity: 1,
-                rotate: 360,
-                y: 0,
-              }}
-              transition={{ duration: 0.7 }}
-            >
+            <IconMotionDiv duration={0.7}>
               <SkillIcon href="https://reactjs.org/" tooltipTitle="ReactJS">
                 <ReactJSIcon className="skill-icon" />
               </SkillIcon>
-            </m.div>
-            <m.div
-              initial={{
-                opacity: 0,
-                y: 50,
-              }}
-              transition={{ duration: 0.7 }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-              }}
-              className="sm:hidden"
-            >
+            </IconMotionDiv>
+            <IconMotionDiv duration={0.7} className="sm:hidden">
               ReactJS
-            </m.div>
+            </IconMotionDiv>
           </div>
           <div className="flex items-center">
-            <m.div
-              initial={{
-                opacity: 0,
-                y: 50,
-              }}
-              whileInView={{
-                opacity: 1,
-                rotate: 360,
-                y: 0,
-              }}
-              transition={{ duration: 0.9 }}
-            >
+            <IconMotionDiv duration={0.9}>
               <SkillIcon
                 href="https://www.typescriptlang.org/"
                 tooltipTitle="Typescript"
               >
                 <TypescriptIcon className="skill-icon" />
               </SkillIcon>
-            </m.div>
-            <m.div
-              initial={{
-                opacity: 0,
-                y: 50,
-              }}
-              transition={{ duration: 0.9 }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-              }}
-              className="sm:hidden"
-            >
+            </IconMotionDiv>
+            <IconMotionDiv duration={0.9} className="sm:hidden">
               Typescript
-            </m.div>
+            </IconMotionDiv>
           </div>
           <div className="mr-10 flex items-center sm:mr-0">
-            <m.div
-              initial={{
-                opacity: 0,
-                y: 50,
-              }}
-              whileInView={{
-                opacity: 1,
-                rotate: 360,
-                y: 0,
-              }}
-              transition={{ duration: 1.1 }}
-            >
+            <IconMotionDiv duration={1.1}>
               <SkillIcon
                 href="https://tailwindcss.com/"
                 tooltipTitle="Tailwind CSS"
               >
                 <TailwindCSSIcon className="skill-icon" />
               </SkillIcon>
-            </m.div>
-            <m.div
-              initial={{
-                opacity: 0,
-                y: 50,
-              }}
-              transition={{ duration: 1.1 }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-              }}
-              className="sm:hidden"
-            >
+            </IconMotionDiv>
+            <IconMotionDiv duration={1.1} className="sm:hidden">
               Tailwind CSS
-            </m.div>
+            </IconMotionDiv>
           </div>
           <div className="flex items-center">
-            <m.div
-              initial={{
-                opacity: 0,
-                y: 50,
-              }}
-              whileInView={{
-                opacity: 1,
-                rotate: 360,
-                y: 0,
-              }}
-              transition={{ duration: 1.3 }}
-            >
+            <IconMotionDiv duration={1.1}>
               <SkillIcon
                 href="https://firebase.google.com/"
                 tooltipTitle="Firebase"
               >
                 <FirebaseIcon className="skill-icon" />
               </SkillIcon>
-            </m.div>
-            <m.div
-              initial={{
-                opacity: 0,
-                y: 50,
-              }}
-              transition={{ duration: 1.3 }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-              }}
-              className="sm:hidden"
-            >
+            </IconMotionDiv>
+            <IconMotionDiv duration={1.1} className="sm:hidden">
               Firebase
-            </m.div>
+            </IconMotionDiv>
           </div>
           <div className="mr-10 flex items-center sm:mr-0">
-            <m.div
-              initial={{
-                opacity: 0,
-                y: 50,
-              }}
-              whileInView={{
-                opacity: 1,
-                rotate: 360,
-                y: 0,
-              }}
-              transition={{ duration: 1.5 }}
-            >
+            <IconMotionDiv duration={1.1}>
               <SkillIcon
                 href="https://www.framer.com/motion/"
                 tooltipTitle="Framer Motion"
               >
                 <FramerMotionIcon className="skill-icon" />
               </SkillIcon>
-            </m.div>
-            <m.div
-              initial={{
-                opacity: 0,
-                y: 50,
-              }}
-              transition={{ duration: 1.5 }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-              }}
-              className="sm:hidden"
-            >
-              Framer m
-            </m.div>
+            </IconMotionDiv>
+            <IconMotionDiv duration={1.1} className="sm:hidden">
+              Framer Motion
+            </IconMotionDiv>
           </div>
           <div className="flex items-center">
-            <m.div
-              initial={{
-                opacity: 0,
-                y: 50,
-              }}
-              whileInView={{
-                opacity: 1,
-                rotate: 360,
-                y: 0,
-              }}
-              transition={{ duration: 1.7 }}
-            >
+            <IconMotionDiv duration={1.1}>
               <SkillIcon
                 href="https://mui.com/core/"
                 tooltipTitle="Material UI"
               >
                 <MaterialUIIcon className="skill-icon" />
               </SkillIcon>
-            </m.div>
-            <m.div
-              initial={{
-                opacity: 0,
-                y: 50,
-              }}
-              transition={{ duration: 1.7 }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-              }}
-              className="sm:hidden"
-            >
+            </IconMotionDiv>
+            <IconMotionDiv duration={1.1} className="sm:hidden">
               Material UI
-            </m.div>
+            </IconMotionDiv>
           </div>
         </div>
       </div>
