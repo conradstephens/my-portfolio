@@ -20,7 +20,7 @@ export default function Projects() {
           whileInView={{ opacity: 1, y: 0 }}
         >
           <h3 className="text-5xl font-medium">Projects</h3>
-          <p className="text-md py-2 leading-8 text-base-content/75">
+          <p className="py-2 text-lg leading-8 text-base-content/75">
             Below are some of my past and present projects I have developed.
           </p>
         </m.div>

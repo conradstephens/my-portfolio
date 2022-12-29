@@ -32,7 +32,7 @@ export default function Hero() {
             transition={{ duration: 0.3, delay: 0.2 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            <p className="text-md py-5 leading-8 text-base-content/75">
+            <p className="py-5 text-lg leading-8 text-base-content/75">
               Hey! Thank you for taking the time to visit my personal website.
               As a full-stack developer, I create{" "}
               <span className="text-accent">eye-catching</span> websites and{" "}

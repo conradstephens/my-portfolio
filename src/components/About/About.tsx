@@ -22,7 +22,7 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
         >
           <h3 className="text-5xl font-medium">About me</h3>
-          <p className="text-md py-2 leading-8 text-base-content/75">
+          <p className="py-2 text-lg leading-8 text-base-content/75">
             {"I've been working as a "}full-stack developer for the past three
             years. During this time, {"I've"} architected databases that scale
             for thousands of users, helped implement user-friendly UI/UX for
@@ -30,7 +30,7 @@ export default function About() {
             constructive criticism from users. Lately I have shifted toward
             learning and developing web3/decentralized applications.
           </p>
-          <p className="text-md py-4 leading-8 text-base-content/75">
+          <p className="py-4 text-lg leading-8 text-base-content/75">
             Below are the more common technologies I utilize in my development.
           </p>
         </m.div>
