@@ -5,18 +5,27 @@ import clsx from "clsx";
 
 interface NavToggleProps {
   showButtons: boolean;
-  setShowButtons: React.Dispatch<React.SetStateAction<boolean>>;
+  setNavState: React.Dispatch<
+    React.SetStateAction<{
+      showButtons: boolean;
+      showNav: boolean;
+    }>
+  >;
 }
 
 export default function NavToggle(props: NavToggleProps) {
-  const { showButtons, setShowButtons } = props;
+  const { showButtons, setNavState } = props;
   const onClick = (e: React.MouseEvent<HTMLLabelElement, MouseEvent>) => {
     e.preventDefault();
-    setShowButtons(!showButtons);
+    setNavState((prevState) => {
+      return { ...prevState, showButtons: !showButtons };
+    });
   };
 
   const onChange = () => {
-    setShowButtons(!showButtons);
+    setNavState((prevState) => {
+      return { ...prevState, showButtons: !showButtons };
+    });
   };
 
   return (
@@ -40,10 +49,7 @@ export default function NavToggle(props: NavToggleProps) {
         onClick={onClick}
       >
         <label className="relative bg-transparent md:hidden" htmlFor="">
-          <NavButtons
-            showButtons={showButtons}
-            setShowButtons={setShowButtons}
-          />
+          <NavButtons showButtons={showButtons} setNavState={setNavState} />
         </label>
       </label>
     </>

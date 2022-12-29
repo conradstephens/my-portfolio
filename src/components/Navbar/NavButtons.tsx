@@ -4,7 +4,12 @@ import Link from "next/link";
 
 interface NavButtonsProps {
   showButtons: boolean;
-  setShowButtons: React.Dispatch<React.SetStateAction<boolean>>;
+  setNavState: React.Dispatch<
+    React.SetStateAction<{
+      showButtons: boolean;
+      showNav: boolean;
+    }>
+  >;
 }
 
 interface ButtonProps {
@@ -30,10 +35,10 @@ const Button = (props: ButtonProps) => {
 };
 
 export default function NavButtons(props: NavButtonsProps) {
-  const { showButtons, setShowButtons } = props;
+  const { showButtons, setNavState } = props;
 
   const hideButtons = () => {
-    setShowButtons(false);
+    setNavState({ showButtons: false, showNav: false });
   };
 
   return (

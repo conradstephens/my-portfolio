@@ -4,10 +4,11 @@ interface IconMotionDivProps {
   duration: number;
   children?: any;
   className?: string;
+  rotate?: number;
 }
 
 export default function IconMotionDiv(props: IconMotionDivProps) {
-  const { children, className, duration } = props;
+  const { children, className, duration, rotate } = props;
   return (
     <m.div
       initial={{
@@ -16,7 +17,7 @@ export default function IconMotionDiv(props: IconMotionDivProps) {
       }}
       whileInView={{
         opacity: 1,
-        rotate: 360,
+        rotate,
         y: 0,
       }}
       transition={{ duration }}

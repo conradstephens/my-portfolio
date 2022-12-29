@@ -37,7 +37,7 @@ export default function About() {
 
         <div className="grid grid-cols-2 grid-rows-4 text-base-content sm:grid-cols-8 sm:grid-rows-1 sm:space-x-0">
           <div className="mr-10 flex items-center sm:mr-0">
-            <IconMotionDiv duration={0.3}>
+            <IconMotionDiv duration={0.3} rotate={360}>
               <SkillIcon
                 href="https://redux-toolkit.js.org/"
                 tooltipTitle="Redux Toolkit"
@@ -50,7 +50,7 @@ export default function About() {
             </IconMotionDiv>
           </div>
           <div className="flex items-center">
-            <IconMotionDiv duration={0.5}>
+            <IconMotionDiv duration={0.5} rotate={360}>
               <SkillIcon href="https://nextjs.org/" tooltipTitle="NextJS">
                 <NextJSIcon className="skill-icon" />
               </SkillIcon>
@@ -60,7 +60,7 @@ export default function About() {
             </IconMotionDiv>
           </div>
           <div className="flex items-center sm:mr-0">
-            <IconMotionDiv duration={0.7}>
+            <IconMotionDiv duration={0.7} rotate={360}>
               <SkillIcon href="https://reactjs.org/" tooltipTitle="ReactJS">
                 <ReactJSIcon className="skill-icon" />
               </SkillIcon>
@@ -70,7 +70,7 @@ export default function About() {
             </IconMotionDiv>
           </div>
           <div className="flex items-center">
-            <IconMotionDiv duration={0.9}>
+            <IconMotionDiv duration={0.9} rotate={360}>
               <SkillIcon
                 href="https://www.typescriptlang.org/"
                 tooltipTitle="Typescript"
@@ -83,7 +83,7 @@ export default function About() {
             </IconMotionDiv>
           </div>
           <div className="mr-10 flex items-center sm:mr-0">
-            <IconMotionDiv duration={1.1}>
+            <IconMotionDiv duration={1.1} rotate={360}>
               <SkillIcon
                 href="https://tailwindcss.com/"
                 tooltipTitle="Tailwind CSS"
@@ -96,7 +96,7 @@ export default function About() {
             </IconMotionDiv>
           </div>
           <div className="flex items-center">
-            <IconMotionDiv duration={1.1}>
+            <IconMotionDiv duration={1.3} rotate={360}>
               <SkillIcon
                 href="https://firebase.google.com/"
                 tooltipTitle="Firebase"
@@ -104,12 +104,12 @@ export default function About() {
                 <FirebaseIcon className="skill-icon" />
               </SkillIcon>
             </IconMotionDiv>
-            <IconMotionDiv duration={1.1} className="sm:hidden">
+            <IconMotionDiv duration={1.3} className="sm:hidden">
               Firebase
             </IconMotionDiv>
           </div>
           <div className="mr-10 flex items-center sm:mr-0">
-            <IconMotionDiv duration={1.1}>
+            <IconMotionDiv duration={1.5} rotate={360}>
               <SkillIcon
                 href="https://www.framer.com/motion/"
                 tooltipTitle="Framer Motion"
@@ -117,12 +117,12 @@ export default function About() {
                 <FramerMotionIcon className="skill-icon" />
               </SkillIcon>
             </IconMotionDiv>
-            <IconMotionDiv duration={1.1} className="sm:hidden">
+            <IconMotionDiv duration={1.5} className="sm:hidden">
               Framer Motion
             </IconMotionDiv>
           </div>
           <div className="flex items-center">
-            <IconMotionDiv duration={1.1}>
+            <IconMotionDiv duration={1.7} rotate={360}>
               <SkillIcon
                 href="https://mui.com/core/"
                 tooltipTitle="Material UI"
@@ -130,7 +130,7 @@ export default function About() {
                 <MaterialUIIcon className="skill-icon" />
               </SkillIcon>
             </IconMotionDiv>
-            <IconMotionDiv duration={1.1} className="sm:hidden">
+            <IconMotionDiv duration={1.7} className="sm:hidden">
               Material UI
             </IconMotionDiv>
           </div>
