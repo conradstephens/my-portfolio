@@ -1,24 +1,24 @@
 import * as React from "react";
 import { NavToggle, NavButtons, ThemeToggle } from "@/components";
 import clsx from "clsx";
-import { EyeIcon } from "@heroicons/react/20/solid";
 
 export default function Navbar() {
-  const [showButtons, setShowButtons] = React.useState(false);
-  const [isScrolling, setIsScrolling] = React.useState(false);
-
-  let scrollTimeout: NodeJS.Timeout;
-  const onScroll = (_e: Event) => {
-    window.clearTimeout(scrollTimeout);
-    setIsScrolling(true);
-    scrollTimeout = setTimeout(() => {
-      setIsScrolling(false);
-    }, 500);
-  };
+  const [{ showButtons, showNav }, setNavState] = React.useState({
+    showButtons: false,
+    showNav: true,
+  });
 
   React.useEffect(() => {
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
+    window.addEventListener("wheel", (e: WheelEvent) => {
+      setNavState((prevState) => {
+        return { ...prevState, showNav: e.deltaY <= 0 };
+      });
+    });
+    return window.removeEventListener("wheel", (e: WheelEvent) => {
+      setNavState((prevState) => {
+        return { ...prevState, showNav: e.deltaY <= 0 };
+      });
+    });
   }, []);
 
   return (
@@ -26,36 +26,31 @@ export default function Navbar() {
       <div
         className={clsx(
           "navbar fixed top-0 left-0 z-10 bg-base-100 opacity-0 transition duration-500 ease-out",
-          !isScrolling && "opacity-100"
+          showNav && "opacity-100"
         )}
       >
         <div className="flex-1">
           <a
-            className="btn-primary btn-sm btn normal-case"
-            href="https://gateway.pinata.cloud/ipfs/QmTNkGfNwvC7UzUCEToVKtfReMs4yCWzBhwRRjHwdAsKqf"
+            className="btn-link btn-sm btn normal-case no-underline"
+            href="https://storage.googleapis.com/conrad_portfolio_bucket/portfolio_images/resume.pdf"
             download="conradsresume.pdf"
             title="Download Resume"
             target="_blank"
             rel="noreferrer"
           >
-            Resume
-            <EyeIcon className="ml-1 h-5 w-5" />
+            <span className="border-b-transparent transition duration-300 ease-in-out hover:border-b-[1px] hover:border-b-primary">
+              {"Here's my resume!"}
+            </span>
           </a>
         </div>
         <div className="hidden md:block">
-          <NavButtons
-            showButtons={showButtons}
-            setShowButtons={setShowButtons}
-          />
+          <NavButtons showButtons={showButtons} setNavState={setNavState} />
         </div>
         <div className="flex-none">
           <ThemeToggle />
         </div>
         <div className="flex-none xl:hidden">
-          <NavToggle
-            showButtons={showButtons}
-            setShowButtons={setShowButtons}
-          />
+          <NavToggle showButtons={showButtons} setNavState={setNavState} />
         </div>
       </div>
     </>

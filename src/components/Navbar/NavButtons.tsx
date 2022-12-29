@@ -4,7 +4,12 @@ import Link from "next/link";
 
 interface NavButtonsProps {
   showButtons: boolean;
-  setShowButtons: React.Dispatch<React.SetStateAction<boolean>>;
+  setNavState: React.Dispatch<
+    React.SetStateAction<{
+      showButtons: boolean;
+      showNav: boolean;
+    }>
+  >;
 }
 
 interface ButtonProps {
@@ -16,24 +21,24 @@ interface ButtonProps {
 const Button = (props: ButtonProps) => {
   const { showButton, onClick, label } = props;
   return (
-    <Link
-      href={`/#${label.toLowerCase()}`}
-      className={clsx(
-        "btn-ghost btn-lg btn normal-case opacity-0 transition-opacity duration-500 ease-in-out md:btn-md xl:visible xl:opacity-100",
-        showButton && "visible opacity-100"
-      )}
-      onClick={onClick}
-    >
-      {label}
+    <Link href={`/#${label.toLowerCase()}`} onClick={onClick}>
+      <button
+        className={clsx(
+          "btn-ghost btn-lg btn normal-case md:btn-md xl:block",
+          showButton ? "block" : "hidden"
+        )}
+      >
+        {label}
+      </button>
     </Link>
   );
 };
 
 export default function NavButtons(props: NavButtonsProps) {
-  const { showButtons, setShowButtons } = props;
+  const { showButtons, setNavState } = props;
 
   const hideButtons = () => {
-    setShowButtons(false);
+    setNavState({ showButtons: false, showNav: false });
   };
 
   return (

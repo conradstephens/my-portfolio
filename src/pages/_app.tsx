@@ -2,13 +2,8 @@ import "../styles/globals.css";
 import { AppProps } from "next/app";
 import { SEO, ThemeProvider } from "@/components";
 import { Analytics } from "@vercel/analytics/react";
+import { LazyMotion, domAnimation } from "framer-motion";
 import Script from "next/script";
-
-declare global {
-  interface Window {
-    grecaptcha?: any;
-  }
-}
 
 export default function MyApp(props: AppProps) {
   const { Component, pageProps } = props;
@@ -21,8 +16,10 @@ export default function MyApp(props: AppProps) {
         defer
       />
       <ThemeProvider>
-        <Component {...pageProps} />
-        <Analytics />
+        <LazyMotion features={domAnimation}>
+          <Component {...pageProps} />
+          <Analytics />
+        </LazyMotion>
       </ThemeProvider>
     </>
   );

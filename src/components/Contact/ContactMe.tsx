@@ -3,11 +3,12 @@ import * as React from "react";
 import Link from "next/link";
 import clsx from "clsx";
 import { useForm, SubmitHandler } from "react-hook-form";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { yupResolver } from "@hookform/resolvers/yup";
 import type { FormInputs, SlackMessageResponse } from "@/types";
 import { XMarkIcon } from "@heroicons/react/20/solid";
 
+// form validation schema
 const validationSchema = yup.object({
   name: yup.string().required("I need to know who I'm talking to!"),
   email: yup
@@ -27,17 +28,20 @@ export default function ContactMe() {
     resolver: yupResolver(validationSchema),
   });
 
+  // loading state for sending slack message
   const [loading, setLoading] = React.useState(false);
-
+  // state for slack response
   const [slackRes, setSlackRes] = React.useState<SlackMessageResponse | null>(
     null
   );
 
+  // hide snackbar
   const hideToast = () => {
     setSlackRes(null);
   };
 
   let messageTimeout: NodeJS.Timeout;
+  // send slack message
   const onSubmit: SubmitHandler<FormInputs> = (data) => {
     if (data.honeypot) {
       return setSlackRes({ message: "No bots allowed", status: "error" });
@@ -65,7 +69,7 @@ export default function ContactMe() {
   return (
     <div className="hero">
       <div className="hero-content flex w-full max-w-screen-md flex-col items-start space-y-2">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 50 }}
           transition={{ duration: 0.5 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -75,16 +79,16 @@ export default function ContactMe() {
             Please feel free to message me on any of my{" "}
             <Link
               href="/#hero"
-              className="btn-link btn p-0 lowercase text-primary no-underline hover:animate-pulse"
+              className="cursor-pointer border-b-[1px] border-b-transparent text-primary transition-all duration-200 ease-in-out hover:border-b-primary"
             >
               social media
             </Link>{" "}
             accounts or send me a message below! <br />
             {`Let's connect!`}
           </p>
-        </motion.div>
+        </m.div>
 
-        <motion.form
+        <m.form
           initial={{ opacity: 0, y: 50 }}
           transition={{ duration: 0.5, delay: 0.1 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -163,7 +167,7 @@ export default function ContactMe() {
           >
             {!loading && "Submit"}
           </button>
-        </motion.form>
+        </m.form>
       </div>
       {slackRes && (
         <div className="toast">
