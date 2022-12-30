@@ -3,7 +3,7 @@ import { ThemeToggle, ThemeProvider } from "./Theme";
 import { Navbar, NavButtons, NavToggle } from "./Navbar";
 import { ContactMe } from "./Contact";
 import { Hero } from "./Hero";
-import { About, SkillIcon, IconMotionDiv } from "./About";
+import { About, IconMotionDiv } from "./About";
 import { Projects, ProjectCard } from "./Projects";
 import {
   FirebaseIcon,
@@ -40,6 +40,5 @@ export {
   ReactJSIcon,
   SolidityIcon,
   GolangIcon,
-  SkillIcon,
   IconMotionDiv,
 };

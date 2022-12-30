@@ -1,6 +1,6 @@
+import Link from "next/link";
 import { m } from "framer-motion";
 import {
-  SkillIcon,
   NextJSIcon,
   ReduxToolkitIcon,
   ReactJSIcon,
@@ -96,14 +96,29 @@ export default function About() {
         <div className="grid grid-cols-2 grid-rows-4 text-base-content sm:grid-cols-8 sm:grid-rows-1 sm:space-x-0">
           {skillIcons.map(
             (
-              { containerClassName, Icon, animationDuration, title, ...other },
+              { containerClassName, Icon, animationDuration, title, href },
               index
             ) => (
               <div key={index} className={containerClassName}>
                 <IconMotionDiv duration={animationDuration} rotate={360}>
-                  <SkillIcon {...other} tooltipTitle={title}>
+                  <div className="tooltip hidden sm:block" data-tip={title}>
+                    <Link
+                      aria-label={title}
+                      href={href}
+                      target="_blank"
+                      className="skill-icon-link"
+                    >
+                      <Icon className="skill-icon" />
+                    </Link>
+                  </div>
+                  <Link
+                    aria-label={title}
+                    href={href}
+                    target="_blank"
+                    className="skill-icon-link sm:hidden"
+                  >
                     <Icon className="skill-icon" />
-                  </SkillIcon>
+                  </Link>
                 </IconMotionDiv>
                 <IconMotionDiv
                   duration={animationDuration}
