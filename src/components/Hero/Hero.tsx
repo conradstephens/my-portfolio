@@ -1,9 +1,35 @@
 import Image from "next/image";
-import { SocialLink } from "@/components";
 import { m } from "framer-motion";
 import Link from "next/link";
 
 export default function Hero() {
+  const socials = [
+    {
+      label: "Follow me on twitter!",
+      href: "https://twitter.com/conradastephens",
+      iconClassName: "fa-brands fa-twitter text-base-content/75",
+    },
+    {
+      label: "Check out my github!",
+      href: "https://github.com/conradstephens",
+      iconClassName: "fa-brands fa-github text-base-content/75",
+    },
+    {
+      label: "Connect with me on linkedin!",
+      href: "https://www.linkedin.com/in/conrad-stephens-97033b79",
+      iconClassName: "fa-brands fa-linkedin text-base-content/75",
+    },
+    {
+      label: "Shoot me a message on slack!",
+      href: `https://apollo5cbus.slack.com/team/${process.env.NEXT_PUBLIC_SLACK_USER_ID}`,
+      iconClassName: "fa-brands fa-slack text-base-content/75",
+    },
+    {
+      label: "Shoot me a message on discord!",
+      href: "https://discordapp.com/users/conrad#7221",
+      iconClassName: "fa-brands fa-discord text-base-content/75",
+    },
+  ];
   return (
     <div className="hero mt-12 sm:h-screen">
       <div className="hero-content flex max-w-screen-md flex-col md:flex-row">
@@ -53,31 +79,17 @@ export default function Hero() {
             </Link>
 
             <div className="gap-0.1 flex justify-center">
-              <SocialLink
-                label="Follow me on twitter!"
-                href="https://twitter.com/conradastephens"
-                iconClassName="fa-brands fa-twitter text-base-content/75"
-              />
-              <SocialLink
-                label="Check out my github!"
-                href="https://github.com/conradstephens"
-                iconClassName="fa-brands fa-github text-base-content/75"
-              />
-              <SocialLink
-                label="Connect with me on linkedin!"
-                href="https://www.linkedin.com/in/conrad-stephens-97033b79"
-                iconClassName="fa-brands fa-linkedin text-base-content/75"
-              />
-              <SocialLink
-                label="Shoot me a message on slack!"
-                href={`https://apollo5cbus.slack.com/team/${process.env.NEXT_PUBLIC_SLACK_USER_ID}`}
-                iconClassName="fa-brands fa-slack text-base-content/75"
-              />
-              <SocialLink
-                label="Shoot me a message on discord!"
-                href="https://discordapp.com/users/conrad#7221"
-                iconClassName="fa-brands fa-discord text-base-content/75"
-              />
+              {socials.map(({ iconClassName, label, ...other }, index) => (
+                <Link
+                  {...other}
+                  key={index}
+                  aria-label={label}
+                  className=" btn-ghost btn-circle btn text-3xl text-gray-600 hover:animate-bounce dark:text-gray-400"
+                  target="_blank"
+                >
+                  <i className={iconClassName} />
+                </Link>
+              ))}
             </div>
           </m.div>
         </div>

@@ -1,5 +1,5 @@
+import clsx from "clsx";
 import Image from "next/image";
-import { m } from "framer-motion";
 import Link from "next/link";
 
 interface ProjectCardProps {
@@ -8,16 +8,17 @@ interface ProjectCardProps {
   imageSrc: string;
   projectLink: string;
   skills: ((props: { className?: string | undefined }) => JSX.Element)[];
+  index: number;
 }
 
 export default function ProjectCard(props: ProjectCardProps) {
-  const { title, description, imageSrc, projectLink, skills } = props;
+  const { title, description, imageSrc, projectLink, skills, index } = props;
   return (
-    <m.div
-      initial={{ opacity: 0, y: 50 }}
-      transition={{ duration: 0.5, delay: 0.2 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      className="card h-[550px] w-full overflow-hidden border-2 border-gray-300 dark:border-gray-700 md:h-[300px] md:card-side"
+    <div
+      className={clsx(
+        "card flex h-[550px] w-full overflow-hidden border-2 border-gray-300 dark:border-gray-700 md:h-[300px] md:card-side",
+        index % 2 && "md:flex-row-reverse"
+      )}
     >
       <div className="h-2/4 w-full overflow-hidden md:h-full md:w-2/4">
         <Image
@@ -48,6 +49,6 @@ export default function ProjectCard(props: ProjectCardProps) {
           </Link>
         </div>
       </div>
-    </m.div>
+    </div>
   );
 }
