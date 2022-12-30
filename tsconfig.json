@@ -23,6 +23,11 @@
       "@/types": ["src/types"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "sanity/tailwind.config.js"
+  ],
   "exclude": ["node_modules"]
 }
