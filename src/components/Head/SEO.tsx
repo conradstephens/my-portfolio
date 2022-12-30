@@ -30,7 +30,7 @@ export default function DefaultSEO() {
         <meta name="twitter:description" content={description} key="twdesc" />
         <meta // large twitter image should be at least 280px by 150px
           name="twitter:image"
-          content="https://gateway.pinata.cloud/ipfs/Qma53FRDXJyiP9f9HNr6PptzVZuCFX34QekGCMHQdSDi34"
+          content="https://gateway.pinata.cloud/ipfs/QmPYTi3ygBBSPeFWNocp8euKCp8LEmjpeB7L1AtGJt9p7a"
           key="twimage"
         />
 
@@ -38,7 +38,7 @@ export default function DefaultSEO() {
         <meta property="og:url" content={url} key="ogurl" />
         <meta // best size is 1200px by 627px
           property="og:image"
-          content="https://gateway.pinata.cloud/ipfs/QmeFQAtqkFN8j7Z9mJ5y7LgC6JtGPg2NxyPPgVqC8WPDa8"
+          content="https://gateway.pinata.cloud/ipfs/QmPYTi3ygBBSPeFWNocp8euKCp8LEmjpeB7L1AtGJt9p7a"
           key="ogimage"
         />
         <meta property="og:site_name" content="" key="ogsitename" />
