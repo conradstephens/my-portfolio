@@ -1,7 +1,6 @@
 import { SEO } from "./Head";
 import { ThemeToggle, ThemeProvider } from "./Theme";
 import { Navbar, NavButtons, NavToggle } from "./Navbar";
-import { SocialLink } from "./Social";
 import { ContactMe } from "./Contact";
 import { Hero } from "./Hero";
 import { About, SkillIcon, IconMotionDiv } from "./About";
@@ -26,7 +25,6 @@ export {
   Navbar,
   NavButtons,
   NavToggle,
-  SocialLink,
   ContactMe,
   Hero,
   About,
