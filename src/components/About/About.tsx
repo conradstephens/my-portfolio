@@ -13,6 +13,64 @@ import {
 } from "@/components";
 
 export default function About() {
+  const skillIcons = [
+    {
+      href: "https://redux-toolkit.js.org/",
+      title: "Redux Toolkit",
+      Icon: ReduxToolkitIcon,
+      animationDuration: 0.3,
+      containerClassName: "mr-10 flex items-center sm:mr-0",
+    },
+    {
+      href: "https://nextjs.org/",
+      title: "NextJS",
+      Icon: NextJSIcon,
+      animationDuration: 0.5,
+      containerClassName: "flex items-center",
+    },
+    {
+      href: "https://reactjs.org/",
+      title: "ReactJS",
+      Icon: ReactJSIcon,
+      animationDuration: 0.7,
+      containerClassName: "flex items-center sm:mr-0",
+    },
+    {
+      href: "https://www.typescriptlang.org/",
+      title: "Typescript",
+      Icon: TypescriptIcon,
+      animationDuration: 0.9,
+      containerClassName: "flex items-center",
+    },
+    {
+      href: "https://tailwindcss.com/",
+      title: "Tailwind CSS",
+      Icon: TailwindCSSIcon,
+      animationDuration: 1.1,
+      containerClassName: "mr-10 flex items-center sm:mr-0",
+    },
+    {
+      href: "https://firebase.google.com/",
+      title: "Firebase",
+      Icon: FirebaseIcon,
+      animationDuration: 1.3,
+      containerClassName: "flex items-center",
+    },
+    {
+      href: "https://www.framer.com/motion/",
+      title: "Framer Motion",
+      Icon: FramerMotionIcon,
+      animationDuration: 1.5,
+      containerClassName: "mr-10 flex items-center sm:mr-0",
+    },
+    {
+      href: "https://mui.com/core/",
+      title: "Material UI",
+      Icon: MaterialUIIcon,
+      animationDuration: 1.7,
+      containerClassName: "flex items-center",
+    },
+  ];
   return (
     <div className="hero">
       <div className="hero-content flex max-w-screen-md flex-col items-start">
@@ -36,104 +94,26 @@ export default function About() {
         </m.div>
 
         <div className="grid grid-cols-2 grid-rows-4 text-base-content sm:grid-cols-8 sm:grid-rows-1 sm:space-x-0">
-          <div className="mr-10 flex items-center sm:mr-0">
-            <IconMotionDiv duration={0.3} rotate={360}>
-              <SkillIcon
-                href="https://redux-toolkit.js.org/"
-                tooltipTitle="Redux Toolkit"
-              >
-                <ReduxToolkitIcon className="skill-icon" />
-              </SkillIcon>
-            </IconMotionDiv>
-            <IconMotionDiv duration={0.3} className="sm:hidden">
-              Redux Toolkit
-            </IconMotionDiv>
-          </div>
-          <div className="flex items-center">
-            <IconMotionDiv duration={0.5} rotate={360}>
-              <SkillIcon href="https://nextjs.org/" tooltipTitle="NextJS">
-                <NextJSIcon className="skill-icon" />
-              </SkillIcon>
-            </IconMotionDiv>
-            <IconMotionDiv duration={0.5} className="sm:hidden">
-              NextJS
-            </IconMotionDiv>
-          </div>
-          <div className="flex items-center sm:mr-0">
-            <IconMotionDiv duration={0.7} rotate={360}>
-              <SkillIcon href="https://reactjs.org/" tooltipTitle="ReactJS">
-                <ReactJSIcon className="skill-icon" />
-              </SkillIcon>
-            </IconMotionDiv>
-            <IconMotionDiv duration={0.7} className="sm:hidden">
-              ReactJS
-            </IconMotionDiv>
-          </div>
-          <div className="flex items-center">
-            <IconMotionDiv duration={0.9} rotate={360}>
-              <SkillIcon
-                href="https://www.typescriptlang.org/"
-                tooltipTitle="Typescript"
-              >
-                <TypescriptIcon className="skill-icon" />
-              </SkillIcon>
-            </IconMotionDiv>
-            <IconMotionDiv duration={0.9} className="sm:hidden">
-              Typescript
-            </IconMotionDiv>
-          </div>
-          <div className="mr-10 flex items-center sm:mr-0">
-            <IconMotionDiv duration={1.1} rotate={360}>
-              <SkillIcon
-                href="https://tailwindcss.com/"
-                tooltipTitle="Tailwind CSS"
-              >
-                <TailwindCSSIcon className="skill-icon" />
-              </SkillIcon>
-            </IconMotionDiv>
-            <IconMotionDiv duration={1.1} className="sm:hidden">
-              Tailwind CSS
-            </IconMotionDiv>
-          </div>
-          <div className="flex items-center">
-            <IconMotionDiv duration={1.3} rotate={360}>
-              <SkillIcon
-                href="https://firebase.google.com/"
-                tooltipTitle="Firebase"
-              >
-                <FirebaseIcon className="skill-icon" />
-              </SkillIcon>
-            </IconMotionDiv>
-            <IconMotionDiv duration={1.3} className="sm:hidden">
-              Firebase
-            </IconMotionDiv>
-          </div>
-          <div className="mr-10 flex items-center sm:mr-0">
-            <IconMotionDiv duration={1.5} rotate={360}>
-              <SkillIcon
-                href="https://www.framer.com/motion/"
-                tooltipTitle="Framer Motion"
-              >
-                <FramerMotionIcon className="skill-icon" />
-              </SkillIcon>
-            </IconMotionDiv>
-            <IconMotionDiv duration={1.5} className="sm:hidden">
-              Framer Motion
-            </IconMotionDiv>
-          </div>
-          <div className="flex items-center">
-            <IconMotionDiv duration={1.7} rotate={360}>
-              <SkillIcon
-                href="https://mui.com/core/"
-                tooltipTitle="Material UI"
-              >
-                <MaterialUIIcon className="skill-icon" />
-              </SkillIcon>
-            </IconMotionDiv>
-            <IconMotionDiv duration={1.7} className="sm:hidden">
-              Material UI
-            </IconMotionDiv>
-          </div>
+          {skillIcons.map(
+            (
+              { containerClassName, Icon, animationDuration, title, ...other },
+              index
+            ) => (
+              <div key={index} className={containerClassName}>
+                <IconMotionDiv duration={animationDuration} rotate={360}>
+                  <SkillIcon {...other} tooltipTitle={title}>
+                    <Icon className="skill-icon" />
+                  </SkillIcon>
+                </IconMotionDiv>
+                <IconMotionDiv
+                  duration={animationDuration}
+                  className="sm:hidden"
+                >
+                  {title}
+                </IconMotionDiv>
+              </div>
+            )
+          )}
         </div>
       </div>
     </div>
