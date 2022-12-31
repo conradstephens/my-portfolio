@@ -1,4 +1,4 @@
-# Conrad's Portfolio Site
+# My Portfolio Site
 
 ## How to use
 
@@ -17,7 +17,7 @@ Or use [Gitpod](https://www.gitpod.io/docs/gitlab-integration)
 
 The project uses [Next.js](https://github.com/vercel/next.js), which is a framework for server-rendered React apps.
 
-CSS && UI
+CSS & UI
 
 - [Tailwind-CSS](https://tailwindcss.com/) -[DaisyUI](https://daisyui.com/)
 
