@@ -5,18 +5,6 @@ import { ContactMe } from "./Contact";
 import { Hero, HeroMotionDiv } from "./Hero";
 import { About, IconMotionDiv } from "./About";
 import { Projects, ProjectCard } from "./Projects";
-import {
-  FirebaseIcon,
-  TailwindCSSIcon,
-  MaterialUIIcon,
-  FramerMotionIcon,
-  NextJSIcon,
-  TypescriptIcon,
-  ReduxToolkitIcon,
-  ReactJSIcon,
-  SolidityIcon,
-  GolangIcon,
-} from "./SVGs";
 
 export {
   SEO,
@@ -30,16 +18,6 @@ export {
   About,
   Projects,
   ProjectCard,
-  FirebaseIcon,
-  TailwindCSSIcon,
-  MaterialUIIcon,
-  FramerMotionIcon,
-  NextJSIcon,
-  TypescriptIcon,
-  ReduxToolkitIcon,
-  ReactJSIcon,
-  SolidityIcon,
-  GolangIcon,
   IconMotionDiv,
   HeroMotionDiv,
 };

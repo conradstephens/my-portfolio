@@ -1,14 +1,5 @@
 import { m } from "framer-motion";
-import {
-  ProjectCard,
-  MaterialUIIcon,
-  NextJSIcon,
-  TypescriptIcon,
-  FirebaseIcon,
-  SolidityIcon,
-  GolangIcon,
-  ReduxToolkitIcon,
-} from "@/components";
+import { ProjectCard } from "@/components";
 
 export default function Projects() {
   const projects = [
@@ -19,13 +10,7 @@ export default function Projects() {
       imageSrc:
         "https://gateway.pinata.cloud/ipfs/QmNqTpPUq8JuSqdTL4BUm7ShLo5mnacAqzKLEB1FvjmJfe",
       projectLink: "https://app.killerpapers.org",
-      skills: [
-        TypescriptIcon,
-        NextJSIcon,
-        MaterialUIIcon,
-        FirebaseIcon,
-        ReduxToolkitIcon,
-      ],
+      skills: [],
     },
     {
       title: "NFT Canvas",
@@ -34,7 +19,7 @@ export default function Projects() {
       imageSrc:
         "https://gateway.pinata.cloud/ipfs/QmfGMe1Jf7CnHzsNTbbgsMfu2L1E81mnsVahxJqLW1Umbv",
       projectLink: "https://daoproject-frontend-one.vercel.app",
-      skills: [TypescriptIcon, NextJSIcon, MaterialUIIcon, SolidityIcon],
+      skills: [],
     },
     {
       title: "Moments",
@@ -43,7 +28,7 @@ export default function Projects() {
       imageSrc:
         "https://gateway.pinata.cloud/ipfs/QmUm7DbuNnoXd3uZdNjrtexNfjyT7jcRumxDYyXJetqtbw",
       projectLink: "https://ggreelmoments.com/",
-      skills: [TypescriptIcon, NextJSIcon, MaterialUIIcon, FirebaseIcon],
+      skills: [],
     },
     {
       title: "PickupPal",
@@ -52,14 +37,7 @@ export default function Projects() {
       imageSrc:
         "https://gateway.pinata.cloud/ipfs/QmTzFQchJgExXr13rne8BgyYSXtsihDDk4yvgCNJpYJSK1",
       projectLink: "https://app.pickuppal.io/",
-      skills: [
-        TypescriptIcon,
-        NextJSIcon,
-        MaterialUIIcon,
-        FirebaseIcon,
-        GolangIcon,
-        ReduxToolkitIcon,
-      ],
+      skills: [],
     },
   ];
   return (
