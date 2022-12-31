@@ -1,5 +1,5 @@
 {
-  "name": "website-starter",
+  "name": "my_portfolio",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -53,8 +53,8 @@
     "text-encoding": "^0.7.0",
     "typescript": "^4.9.4"
   },
-  "author": "scarlettmp",
+  "author": "Conrad Stephens",
   "license": "MIT",
   "main": "index.js",
-  "repository": "https://github.com/scarlettmp/website-starter.git"
+  "repository": "https://github.com/conradstephens/my-portfolio.git"
 }
