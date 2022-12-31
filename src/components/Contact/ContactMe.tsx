@@ -13,7 +13,7 @@ const validationSchema = yup.object({
   name: yup.string().required("I need to know who I'm talking to!"),
   email: yup
     .string()
-    .email("I need a valid email honeypot!")
+    .email("I need a valid email!")
     .required("I need a way to respond to you!"),
   message: yup.string().required("What are we talking about?"),
 });
