@@ -36,7 +36,7 @@ export interface About extends SanityBody {
   techTitle: string;
 }
 
-export interface tech extends SanityBody {
+export interface Tech extends SanityBody {
   _type: "tech";
   title: string;
   html: string;
@@ -49,4 +49,12 @@ export interface CommonTech extends SanityBody {
   html: string;
   className: string;
   animationDuration: number;
+}
+
+export interface Project extends SanityBody {
+  title: string;
+  description: string;
+  url: string;
+  image: Image;
+  tech: { _key: string; _ref: string; _type: "reference" }[];
 }

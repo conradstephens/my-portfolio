@@ -1,6 +1,12 @@
 import { ContactMe, Navbar, Hero, About, Projects } from "@/components";
 import type { GetStaticProps } from "next";
-import type { Hero as HeroTypes, Social, About as AboutTypes } from "@/types";
+import type {
+  Hero as HeroTypes,
+  Social,
+  About as AboutTypes,
+  Project,
+  Tech,
+} from "@/types";
 import { sanityClient } from "sanity";
 import { groq } from "next-sanity";
 import { CommonTech } from "src/types/sanity";
@@ -10,11 +16,12 @@ type Props = {
   socials: Social[];
   about: AboutTypes;
   commonTech: CommonTech[];
+  projects: Project[];
+  tech: Tech[];
 };
 
 export default function Index(props: Props) {
-  const { hero, socials, about, commonTech } = props;
-  console.log(about);
+  const { hero, socials, about, commonTech, projects, tech } = props;
   return (
     <div className="relative z-0 h-screen overflow-scroll scroll-smooth scrollbar-thin scrollbar-thumb-primary">
       <Navbar />
@@ -31,7 +38,7 @@ export default function Index(props: Props) {
 
         {/* projects */}
         <section id="projects">
-          <Projects />
+          <Projects projects={projects} tech={tech} />
         </section>
 
         {/* contact */}
@@ -56,8 +63,14 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   const commonTech: CommonTech[] = await sanityClient.fetch(groq`
     *[_type == "commonTech"]
   `);
+  const projects: Project[] = await sanityClient.fetch(groq`
+    *[_type == "project"]
+  `);
+  const tech: Tech[] = await sanityClient.fetch(groq`
+    *[_type == "tech"]
+  `);
   return {
-    props: { hero, socials, about, commonTech },
+    props: { hero, socials, about, commonTech, projects, tech },
     // Next.js will attempt to re-generate the page:
     // - When a request comes in
     // - At most once every 10 seconds

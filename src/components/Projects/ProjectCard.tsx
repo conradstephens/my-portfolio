@@ -1,18 +1,26 @@
+import * as React from "react";
+import type { Project, Tech } from "@/types";
 import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
+import { urlFor } from "sanity";
 
-interface ProjectCardProps {
-  title: string;
-  description: string;
-  imageSrc: string;
-  projectLink: string;
-  skills: ((props: { className?: string | undefined }) => JSX.Element)[];
+interface Props {
+  project: Project;
+  tech: Tech[];
   index: number;
 }
 
-export default function ProjectCard(props: ProjectCardProps) {
-  const { title, description, imageSrc, projectLink, skills, index } = props;
+export default function ProjectCard(props: Props) {
+  const { project, tech, index } = props;
+  const { title, image, description, url, tech: projectTech } = project;
+  console.log(tech);
+  const techMemo = React.useMemo(() => {
+    return tech.filter((tech) =>
+      projectTech.find((projectTech) => projectTech._ref === tech._id)
+    );
+  }, []);
+
   return (
     <div
       className={clsx(
@@ -27,21 +35,25 @@ export default function ProjectCard(props: ProjectCardProps) {
           width={500}
           loading="lazy"
           style={{ objectFit: "cover", height: "100%", width: "100%" }}
-          src={imageSrc}
+          src={urlFor(image).url()}
           alt={title}
         />
       </div>
       <div className="card-body h-2/4 w-full bg-gray-200 dark:bg-gray-800 md:h-full md:w-2/4">
         <h2 className="card-title uppercase tracking-[2px]">{title}</h2>
         <div className="flex">
-          {skills.map((Skill, index) => (
-            <Skill key={index} className="mr-2 h-6 w-6 fill-base-content" />
+          {techMemo.map(({ html, _id }) => (
+            <div
+              key={_id}
+              dangerouslySetInnerHTML={{ __html: html }}
+              className="mr-2 h-6 w-6 fill-base-content"
+            />
           ))}
         </div>
         <p className="text-base-content/75">{description}</p>
         <div className="card-actions justify-center">
           <Link
-            href={projectLink}
+            href={url}
             target="_blank"
             className="btn-white btn-outline btn-sm btn"
           >
