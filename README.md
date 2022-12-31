@@ -1,4 +1,4 @@
-# Website starter With Next.js
+# Conrad's Portfolio Site
 
 ## How to use
 
@@ -21,9 +21,9 @@ CSS && UI
 
 - [Tailwind-CSS](https://tailwindcss.com/) -[DaisyUI](https://daisyui.com/)
 
-State management
+CMS
 
-- Redux-toolkit
+- [Sanity](https://sanity.io)
 
 Forms
 
