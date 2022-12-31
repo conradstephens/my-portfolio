@@ -30,7 +30,7 @@ export default function About(props: Props) {
 
         <div className="grid grid-cols-2 grid-rows-4 text-base-content sm:grid-cols-8 sm:grid-rows-1 sm:space-x-0">
           {commonTech
-            .sort((a, d) => a.animationDuration - d.animationDuration)
+            ?.sort((a, d) => a.animationDuration - d.animationDuration)
             .map(
               ({ className, animationDuration, title, url, html }, index) => (
                 <div key={index} className={className}>

@@ -14,7 +14,7 @@ interface Props {
 export default function ProjectCard(props: Props) {
   const { project, tech, index } = props;
   const { title, image, description, url, tech: projectTech } = project;
-  console.log(tech);
+
   const techMemo = React.useMemo(() => {
     return tech.filter((tech) =>
       projectTech.find((projectTech) => projectTech._ref === tech._id)

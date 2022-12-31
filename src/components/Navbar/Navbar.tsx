@@ -1,6 +1,6 @@
 import * as React from "react";
 import { NavToggle, NavButtons, ThemeToggle } from "@/components";
-import clsx from "clsx";
+import { m } from "framer-motion";
 
 export default function Navbar() {
   const [{ showButtons, showNav }, setNavState] = React.useState({
@@ -23,11 +23,11 @@ export default function Navbar() {
 
   return (
     <>
-      <div
-        className={clsx(
-          "navbar fixed top-0 left-0 z-10 bg-base-100 opacity-0 transition duration-500 ease-out",
-          showNav && "opacity-100"
-        )}
+      <m.div
+        initial={{ opacity: 0, y: -50 }}
+        transition={{ duration: 0.3 }}
+        animate={showNav ? { opacity: 1, y: 0 } : { opacity: 0, y: -50 }}
+        className="navbar fixed top-0 left-0 z-10 bg-base-100"
       >
         <div className="flex-1">
           <a
@@ -52,7 +52,7 @@ export default function Navbar() {
         <div className="flex-none xl:hidden">
           <NavToggle showButtons={showButtons} setNavState={setNavState} />
         </div>
-      </div>
+      </m.div>
     </>
   );
 }

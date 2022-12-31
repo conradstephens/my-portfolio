@@ -43,7 +43,7 @@ export default function Hero(props: Props) {
             </Link>
 
             <div className="gap-0.1 flex justify-center">
-              {socials.map(({ className, label, url, _id }) => (
+              {socials?.map(({ className, label, url, _id }) => (
                 <Link
                   href={url}
                   key={_id}
