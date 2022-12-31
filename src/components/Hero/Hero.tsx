@@ -1,74 +1,38 @@
 import Image from "next/image";
-import { m } from "framer-motion";
 import Link from "next/link";
+import HeroMotionDiv from "./HeroMotionDiv";
+import type { Hero as HeroTypes, Social } from "@/types";
+import { urlFor } from "sanity";
 
-export default function Hero() {
-  const socials = [
-    {
-      label: "Follow me on twitter!",
-      href: "https://twitter.com/conradastephens",
-      iconClassName: "fa-brands fa-twitter text-base-content/75",
-    },
-    {
-      label: "Check out my github!",
-      href: "https://github.com/conradstephens",
-      iconClassName: "fa-brands fa-github text-base-content/75",
-    },
-    {
-      label: "Connect with me on linkedin!",
-      href: "https://www.linkedin.com/in/conrad-stephens-97033b79",
-      iconClassName: "fa-brands fa-linkedin text-base-content/75",
-    },
-    {
-      label: "Shoot me a message on slack!",
-      href: `https://apollo5cbus.slack.com/team/${process.env.NEXT_PUBLIC_SLACK_USER_ID}`,
-      iconClassName: "fa-brands fa-slack text-base-content/75",
-    },
-    {
-      label: "Shoot me a message on discord!",
-      href: "https://discordapp.com/users/conrad#7221",
-      iconClassName: "fa-brands fa-discord text-base-content/75",
-    },
-  ];
+interface Props {
+  hero: HeroTypes;
+  socials: Social[];
+}
+
+export default function Hero(props: Props) {
+  const { hero, socials } = props;
   return (
     <div className="hero mt-12 sm:h-screen">
       <div className="hero-content flex max-w-screen-md flex-col md:flex-row">
         <div className="max-w-[388px]">
-          <m.div
-            initial={{ opacity: 0, y: 50 }}
-            transition={{ duration: 0.3 }}
-            animate={{ opacity: 1, y: 0 }}
-          >
+          <HeroMotionDiv>
             <h1 className="py-2 text-5xl font-medium">
-              Conrad{" "}
+              {`${hero?.firstName} `}
               <span className="inline-block transition-all duration-200 hover:scale-110">
-                Stephens
+                {hero?.lastName}
               </span>
             </h1>
-          </m.div>
-          <m.div
-            initial={{ opacity: 0, y: 50 }}
-            transition={{ duration: 0.3, delay: 0.1 }}
-            animate={{ opacity: 1, y: 0 }}
-          >
-            <h2 className="py-2 text-2xl text-primary">FullStack Developer</h2>
-          </m.div>
-          <m.div
-            initial={{ opacity: 0, y: 50 }}
-            transition={{ duration: 0.3, delay: 0.2 }}
-            animate={{ opacity: 1, y: 0 }}
-          >
+          </HeroMotionDiv>
+          <HeroMotionDiv delay={0.1}>
+            <h2 className="py-2 text-2xl text-primary">{hero?.jobTitle}</h2>
+          </HeroMotionDiv>
+          <HeroMotionDiv delay={0.2}>
             <p className="py-5 text-lg leading-8 text-base-content/75">
-              Hey! Thank you for taking the time to visit my personal website.
-              As a full-stack developer, I create{" "}
-              <span className="text-accent">eye-catching</span> websites and{" "}
-              <span className="text-accent">scalable</span> web applications 💻
+              {hero?.backgroundInfo}
             </p>
-          </m.div>
-          <m.div
-            initial={{ opacity: 0, y: 50 }}
-            transition={{ duration: 0.3, delay: 0.3 }}
-            animate={{ opacity: 1, y: 0 }}
+          </HeroMotionDiv>
+          <HeroMotionDiv
+            delay={0.3}
             className="flex flex-col items-start gap-4 sm:flex-row sm:gap-0"
           >
             <Link
@@ -79,34 +43,30 @@ export default function Hero() {
             </Link>
 
             <div className="gap-0.1 flex justify-center">
-              {socials.map(({ iconClassName, label, ...other }, index) => (
+              {socials?.map(({ className, label, url, _id }) => (
                 <Link
-                  {...other}
-                  key={index}
+                  href={url}
+                  key={_id}
                   aria-label={label}
                   className=" btn-ghost btn-circle btn text-3xl text-gray-600 hover:animate-bounce dark:text-gray-400"
                   target="_blank"
                 >
-                  <i className={iconClassName} />
+                  <i className={className} />
                 </Link>
               ))}
             </div>
-          </m.div>
+          </HeroMotionDiv>
         </div>
-        <m.div
-          initial={{ opacity: 0, y: 50 }}
-          transition={{ duration: 0.3 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="relative mx-auto mt-20 h-80 w-80 overflow-hidden rounded-full bg-gradient-to-b from-primary md:mt-0"
-        >
+
+        <HeroMotionDiv className="relative mx-auto mt-20 h-80 w-80 overflow-hidden rounded-full bg-gradient-to-b from-primary md:mt-0">
           <Image
             alt="portrait"
             fill
             priority
             style={{ objectFit: "cover", marginLeft: 10 }}
-            src="https://gateway.pinata.cloud/ipfs/QmTNXiXFaRfzBJbZZ5nTJJY2cxiypnbeo77W1JbmqvYmkv"
+            src={urlFor(hero?.image).url()}
           />
-        </m.div>
+        </HeroMotionDiv>
       </div>
     </div>
   );
