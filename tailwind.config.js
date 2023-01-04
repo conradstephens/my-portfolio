@@ -1,36 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx}",
+    "./src/app/**/*.{js,ts,jsx,tsx}", // Note the addition of the `app` directory.
     "./src/components/**/*.{js,ts,jsx,tsx}",
   ],
   darkMode: "class",
-  theme: {
-    typography: (theme) => ({}),
-    extend: {
-      typography: (theme) => ({
-        dark: {
-          css: {
-            color: "white",
-          },
-        },
-      }),
-      colors: {
-        disabled: {
-          light: "#4b5563",
-          dark: "#6b7280",
-        },
-      },
-    },
-  },
-  variants: {
-    typography: ["dark"],
-  },
-  plugins: [
-    require("@tailwindcss/typography"),
-    require("tailwind-scrollbar"),
-    require("daisyui"),
-  ],
+  theme: {},
+  plugins: [require("tailwind-scrollbar"), require("daisyui")],
   daisyui: {
     themes: ["winter", "night"],
     darkTheme: "night",

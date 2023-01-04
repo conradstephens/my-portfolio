@@ -1,13 +1,12 @@
+"use client";
+
 import * as React from "react";
 import clsx from "clsx";
+import { useDemoModal } from "@/context";
 
-interface Props {
-  setDemoSrc: React.Dispatch<React.SetStateAction<string>>;
-  demoSrc: string;
-}
+export default function DemoVideoModal() {
+  const { demoSrc, setDemoSrc } = useDemoModal();
 
-export default function DemoVideoModal(props: Props) {
-  const { demoSrc, setDemoSrc } = props;
   // Get reference to video
   const videoRef = React.useRef<HTMLVideoElement>(null);
   // State for video load

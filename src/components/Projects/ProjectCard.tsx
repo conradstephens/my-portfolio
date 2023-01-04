@@ -23,12 +23,9 @@ export default React.memo(function ProjectCard(props: Props) {
     demo_url: demoUrl,
   } = project;
 
-  // Memoize tech to prevent re-rendering
-  const techMemo = React.useMemo(() => {
-    return tech.filter((tech) =>
-      projectTech.find((projectTech) => projectTech._ref === tech._id)
-    );
-  }, []);
+  const techMemo = tech.filter((tech) =>
+    projectTech.find((projectTech) => projectTech._ref === tech._id)
+  );
 
   // Handle modal open/close
   const handleOpen = () => {
