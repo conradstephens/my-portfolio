@@ -22,24 +22,20 @@ import { groq } from "next-sanity";
 // - At most once every 10 seconds
 export const revalidate = 10; // revalidate this page every 10 seconds
 async function getData() {
-  const hero: HeroTypes = await sanityClient.fetch(groq`
-  *[_type == "hero"][0]
-`);
-  const socials: Social[] = await sanityClient.fetch(groq`
-  *[_type == "social"]
-`);
-  const about: AboutTypes = await sanityClient.fetch(groq`
-  *[_type == "about"][0]
-`);
-  const commonTech: CommonTech[] = await sanityClient.fetch(groq`
-  *[_type == "commonTech"]
-`);
-  const projects: Project[] = await sanityClient.fetch(groq`
-  *[_type == "project"]
-`);
-  const tech: Tech[] = await sanityClient.fetch(groq`
-  *[_type == "tech"]
-`);
+  const hero: HeroTypes = await sanityClient.fetch(groq`*[_type == "hero"][0]`);
+  const socials: Social[] = await sanityClient.fetch(
+    groq`*[_type == "social"]`
+  );
+  const about: AboutTypes = await sanityClient.fetch(
+    groq`*[_type == "about"][0]`
+  );
+  const commonTech: CommonTech[] = await sanityClient.fetch(
+    groq`*[_type == "commonTech"]`
+  );
+  const projects: Project[] = await sanityClient.fetch(
+    groq`*[_type == "project"]`
+  );
+  const tech: Tech[] = await sanityClient.fetch(groq`*[_type == "tech"]`);
   return { hero, socials, about, commonTech, projects, tech };
 }
 
