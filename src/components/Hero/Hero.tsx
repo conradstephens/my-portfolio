@@ -58,7 +58,10 @@ export default function Hero(props: Props) {
           </HeroMotionDiv>
         </div>
 
-        <HeroMotionDiv className="relative mx-auto mt-20 h-80 w-80 overflow-hidden rounded-full bg-gradient-to-b from-primary md:mt-0">
+        <HeroMotionDiv
+          delay={0.4}
+          className="relative mx-auto mt-20 h-80 w-80 overflow-hidden rounded-full bg-gradient-to-b from-primary md:mt-0"
+        >
           <Image
             alt="portrait"
             fill

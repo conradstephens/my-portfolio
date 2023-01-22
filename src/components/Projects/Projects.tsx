@@ -1,3 +1,4 @@
+import * as React from "react";
 import { m } from "framer-motion";
 import { ProjectCard } from "@/components";
 import type { Project, Tech } from "@/types";
@@ -5,10 +6,11 @@ import type { Project, Tech } from "@/types";
 interface Props {
   projects: Project[];
   tech: Tech[];
+  setDemoSrc: React.Dispatch<React.SetStateAction<string>>;
 }
 
 export default function Projects(props: Props) {
-  const { projects, tech } = props;
+  const { projects, tech, setDemoSrc } = props;
 
   return (
     <div className="hero">
@@ -27,12 +29,18 @@ export default function Projects(props: Props) {
         <div className="space-y-5">
           {projects?.map((project, index) => (
             <m.div
+              className="z-0"
               key={index}
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 50, zIndex: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
               whileInView={{ opacity: 1, y: 0 }}
             >
-              <ProjectCard project={project} tech={tech} index={index} />
+              <ProjectCard
+                project={project}
+                tech={tech}
+                index={index}
+                setDemoSrc={setDemoSrc}
+              />
             </m.div>
           ))}
         </div>

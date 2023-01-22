@@ -55,6 +55,7 @@ export interface Project extends SanityBody {
   title: string;
   description: string;
   url: string;
+  demo_url?: string;
   image: Image;
   tech: { _key: string; _ref: string; _type: "reference" }[];
 }
