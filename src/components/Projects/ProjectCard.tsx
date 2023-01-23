@@ -9,17 +9,31 @@ interface Props {
   project: Project;
   tech: Tech[];
   index: number;
+  setDemoSrc: React.Dispatch<React.SetStateAction<string>>;
 }
 
-export default function ProjectCard(props: Props) {
-  const { project, tech, index } = props;
-  const { title, image, description, url, tech: projectTech } = project;
+export default React.memo(function ProjectCard(props: Props) {
+  const { project, tech, setDemoSrc, index } = props;
+  const {
+    title,
+    image,
+    description,
+    url,
+    tech: projectTech,
+    demo_url: demoUrl,
+  } = project;
 
+  // Memoize tech to prevent re-rendering
   const techMemo = React.useMemo(() => {
     return tech.filter((tech) =>
       projectTech.find((projectTech) => projectTech._ref === tech._id)
     );
   }, []);
+
+  // Handle modal open/close
+  const handleOpen = () => {
+    setDemoSrc(demoUrl || "");
+  };
 
   return (
     <div
@@ -51,16 +65,25 @@ export default function ProjectCard(props: Props) {
           ))}
         </div>
         <p className="text-base-content/75">{description}</p>
-        <div className="card-actions justify-center">
-          <Link
-            href={url}
-            target="_blank"
-            className="btn-white btn-outline btn-sm btn"
-          >
-            View Project
-          </Link>
-        </div>
+        {demoUrl && demoUrl.length > 0 && (
+          <div className="card-actions justify-center">
+            <Link
+              href={url}
+              target="_blank"
+              className="btn-white btn-outline btn-sm btn"
+            >
+              View Project
+            </Link>
+            <label
+              htmlFor="my-modal"
+              className="btn-white btn-outline btn-sm btn"
+              onClick={handleOpen}
+            >
+              View Demo
+            </label>
+          </div>
+        )}
       </div>
     </div>
   );
-}
+});

@@ -1,3 +1,4 @@
+import * as React from "react";
 import { ContactMe, Navbar, Hero, About, Projects } from "@/components";
 import type { GetStaticProps } from "next";
 import type {
@@ -10,6 +11,15 @@ import type {
 import { sanityClient } from "sanity";
 import { groq } from "next-sanity";
 import { CommonTech } from "src/types/sanity";
+import dynamic from "next/dynamic";
+
+// Dynamic import for modal
+const DemoVideoModal = dynamic(
+  () => import("../components/Projects/DemoVideo"),
+  {
+    ssr: false,
+  }
+);
 
 type Props = {
   hero: HeroTypes;
@@ -22,6 +32,10 @@ type Props = {
 
 export default function Index(props: Props) {
   const { hero, socials, about, commonTech, projects, tech } = props;
+
+  // State for modal
+  const [demoSrc, setDemoSrc] = React.useState("");
+
   return (
     <div className="relative z-0 h-screen overflow-scroll scroll-smooth scrollbar-thin scrollbar-thumb-primary">
       <Navbar />
@@ -38,7 +52,7 @@ export default function Index(props: Props) {
 
         {/* projects */}
         <section id="projects">
-          <Projects projects={projects} tech={tech} />
+          <Projects projects={projects} tech={tech} setDemoSrc={setDemoSrc} />
         </section>
 
         {/* contact */}
@@ -46,6 +60,8 @@ export default function Index(props: Props) {
           <ContactMe />
         </section>
       </div>
+      {/* Modal */}
+      <DemoVideoModal demoSrc={demoSrc} setDemoSrc={setDemoSrc} />
     </div>
   );
 }

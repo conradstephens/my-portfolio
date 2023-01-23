@@ -4,7 +4,7 @@ import { Navbar, NavButtons, NavToggle } from "./Navbar";
 import { ContactMe } from "./Contact";
 import { Hero, HeroMotionDiv } from "./Hero";
 import { About, IconMotionDiv } from "./About";
-import { Projects, ProjectCard } from "./Projects";
+import { Projects, ProjectCard, DemoVideoModal } from "./Projects";
 
 export {
   SEO,
@@ -20,4 +20,5 @@ export {
   ProjectCard,
   IconMotionDiv,
   HeroMotionDiv,
+  DemoVideoModal,
 };

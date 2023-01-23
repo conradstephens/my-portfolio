@@ -21,6 +21,11 @@ const type = defineType({
       type: 'url',
     },
     {
+      name: 'demo_url',
+      title: 'Demo Url',
+      type: 'url',
+    },
+    {
       name: 'image',
       title: 'Image',
       type: 'image',
