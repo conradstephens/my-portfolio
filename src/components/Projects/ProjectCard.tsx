@@ -30,6 +30,8 @@ export default React.memo(function ProjectCard(props: Props) {
     );
   }, []);
 
+  console.log(project);
+
   // Handle modal open/close
   const handleOpen = () => {
     setDemoSrc(demoUrl || "");
@@ -74,13 +76,17 @@ export default React.memo(function ProjectCard(props: Props) {
             >
               View Project
             </Link>
-            <label
-              htmlFor="my-modal"
-              className="btn-white btn-outline btn-sm btn"
-              onClick={handleOpen}
-            >
-              View Demo
-            </label>
+            {title === "Senior Dev" ? (
+              <></>
+            ) : (
+              <label
+                htmlFor="my-modal"
+                className="btn-white btn-outline btn-sm btn"
+                onClick={handleOpen}
+              >
+                View Demo
+              </label>
+            )}
           </div>
         )}
       </div>
