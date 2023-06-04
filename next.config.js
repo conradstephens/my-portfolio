@@ -8,7 +8,4 @@ module.exports = withBundleAnalyzer({
   images: {
     domains: ["gateway.pinata.cloud", "cdn.sanity.io"],
   },
-  experimental: {
-    appDir: true,
-  },
 });
