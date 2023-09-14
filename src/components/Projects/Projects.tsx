@@ -1,16 +1,18 @@
-import * as React from "react";
+"use client";
+
 import { m } from "framer-motion";
-import { ProjectCard } from "@/components";
+import { ProjectCard } from "src/components";
 import type { Project, Tech } from "@/types";
+import { useDemoModal } from "@/context";
 
 interface Props {
   projects: Project[];
   tech: Tech[];
-  setDemoSrc: React.Dispatch<React.SetStateAction<string>>;
 }
 
 export default function Projects(props: Props) {
-  const { projects, tech, setDemoSrc } = props;
+  const { projects, tech } = props;
+  const { setDemoSrc } = useDemoModal();
 
   return (
     <div className="hero">

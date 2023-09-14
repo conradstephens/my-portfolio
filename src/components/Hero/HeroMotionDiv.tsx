@@ -1,9 +1,11 @@
+"use client";
+
 import { m } from "framer-motion";
 
 interface Props {
   delay?: number;
   className?: string;
-  children?: any;
+  children: React.ReactNode;
 }
 
 export default function HeroMotionDiv(props: Props) {

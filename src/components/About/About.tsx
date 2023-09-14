@@ -1,7 +1,9 @@
+"use client";
+
 import Link from "next/link";
 import { m } from "framer-motion";
 import type { About as AboutTypes } from "@/types";
-import { IconMotionDiv } from "@/components";
+import { IconMotionDiv } from "src/components";
 import { CommonTech } from "src/types/sanity";
 
 interface Props {

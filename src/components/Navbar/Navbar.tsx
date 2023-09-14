@@ -1,5 +1,6 @@
+"use client";
 import * as React from "react";
-import { NavToggle, NavButtons, ThemeToggle } from "@/components";
+import { NavToggle, NavButtons, ThemeToggle } from "src/components";
 import { m } from "framer-motion";
 
 export default function Navbar() {

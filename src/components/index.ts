@@ -1,4 +1,3 @@
-import { SEO } from "./Head";
 import { ThemeToggle, ThemeProvider } from "./Theme";
 import { Navbar, NavButtons, NavToggle } from "./Navbar";
 import { ContactMe } from "./Contact";
@@ -7,7 +6,6 @@ import { About, IconMotionDiv } from "./About";
 import { Projects, ProjectCard, DemoVideoModal } from "./Projects";
 
 export {
-  SEO,
   ThemeToggle,
   ThemeProvider,
   Navbar,

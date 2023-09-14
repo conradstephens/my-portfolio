@@ -1,3 +1,5 @@
+"use client";
+
 import * as yup from "yup";
 import * as React from "react";
 import Link from "next/link";
