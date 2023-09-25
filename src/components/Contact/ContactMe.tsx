@@ -49,7 +49,7 @@ export default function ContactMe() {
       return setSlackRes({ message: "No bots allowed", status: "error" });
     }
     setLoading(true);
-    fetch(`${window.location.origin}/api/slackMessage`, {
+    fetch(`/api/slackMessage`, {
       method: "POST",
       body: JSON.stringify({ ...data }),
     })
@@ -164,10 +164,10 @@ export default function ContactMe() {
             type="submit"
             className={clsx(
               "btn-primary btn col-span-2 rounded-md",
-              loading && "btn-disabled loading"
+              loading && "btn-disabled"
             )}
           >
-            {!loading && "Submit"}
+            {!loading ? "Submit" : <span className="loading loading-spinner" />}
           </button>
         </m.form>
       </div>

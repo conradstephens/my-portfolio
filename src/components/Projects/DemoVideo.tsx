@@ -36,8 +36,9 @@ export default function DemoVideoModal() {
       <div className="modal-box max-w-5xl">
         <div
           className={clsx(
-            "animate-pulse rounded bg-slate-400 dark:bg-slate-700",
-            isLoaded && "animate-none"
+            "rounded bg-slate-400 dark:bg-slate-700",
+            isLoaded && "animate-none",
+            !isLoaded && "animate-pulse"
           )}
         >
           <video

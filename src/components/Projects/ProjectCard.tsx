@@ -35,7 +35,7 @@ export default React.memo(function ProjectCard(props: Props) {
   return (
     <div
       className={clsx(
-        "card flex h-[550px] w-full overflow-hidden border-2 border-gray-300 dark:border-gray-700 md:h-[300px] md:card-side",
+        "card flex h-[550px] w-full overflow-hidden border-2 border-gray-300 md:card-side dark:border-gray-700 md:h-[300px]",
         index % 2 && "md:flex-row-reverse"
       )}
     >
