@@ -1,15 +1,10 @@
-import { NextApiResponse, NextApiRequest } from "next";
+import { NextResponse } from "next/server";
 import * as bolt from "@slack/bolt";
-import type { FormInputs, SlackMessageResponse } from "@/types";
+import type { FormInputs } from "@/types";
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<SlackMessageResponse>
-) {
+export async function POST(req: Request) {
   try {
-    const { name, email, subject, message } = JSON.parse(
-      req.body
-    ) as FormInputs;
+    const { name, email, subject, message } = (await req.json()) as FormInputs;
     // initialize slack app
     const app = new bolt.App({
       signingSecret: process.env.SLACK_SIGNING_SECRET,
@@ -21,7 +16,10 @@ export default async function handler(
     });
 
     if (!channel || !channel.id) {
-      return res.send({ status: "error", message: "Error sending message" });
+      return NextResponse.json(
+        { status: "error", message: "Error sending message" },
+        { status: 500 }
+      );
     }
 
     await app.client.chat.postMessage({
@@ -45,9 +43,15 @@ export default async function handler(
       ],
       text: `Message from ${name}`,
     });
-    res.send({ status: "success", message: "Message sent" });
+    return NextResponse.json(
+      { status: "success", message: "Message sent" },
+      { status: 200 }
+    );
   } catch (e) {
     console.log(e);
-    res.send({ status: "error", message: "Error sending message" });
+    return NextResponse.json(
+      { status: "error", message: "Error sending message" },
+      { status: 500 }
+    );
   }
 }
