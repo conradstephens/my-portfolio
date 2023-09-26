@@ -30,20 +30,14 @@ export default function Projects(props: Props) {
 
         <div className="space-y-5">
           {projects?.map((project, index) => (
-            <m.div
-              className="z-0"
-              key={index}
-              initial={{ opacity: 0, y: 50, zIndex: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              whileInView={{ opacity: 1, y: 0 }}
-            >
+            <div className="z-0" key={index}>
               <ProjectCard
                 project={project}
                 tech={tech}
                 index={index}
                 setDemoSrc={setDemoSrc}
               />
-            </m.div>
+            </div>
           ))}
         </div>
       </div>

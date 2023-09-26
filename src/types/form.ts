@@ -1,7 +1,7 @@
 export interface FormInputs {
   name: string;
   email: string;
-  subject: string;
+  subject?: string;
   message: string;
   honeypot?: string;
 }

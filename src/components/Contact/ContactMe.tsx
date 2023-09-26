@@ -13,11 +13,13 @@ import { XMarkIcon } from "@heroicons/react/20/solid";
 // form validation schema
 const validationSchema = yup.object({
   name: yup.string().required("I need to know who I'm talking to!"),
+  subject: yup.string(),
   email: yup
     .string()
     .email("I need a valid email!")
     .required("I need a way to respond to you!"),
   message: yup.string().required("What are we talking about?"),
+  honeypot: yup.string(),
 });
 
 export default function ContactMe() {
@@ -150,7 +152,7 @@ export default function ContactMe() {
               {...register("message")}
               placeholder="Message"
               className={clsx(
-                "contactInput textarea-primary textarea min-h-[300px]",
+                "contactInput textarea textarea-primary min-h-[300px]",
                 errors["message"] && "textarea-error outline-error"
               )}
             />
@@ -163,7 +165,7 @@ export default function ContactMe() {
           <button
             type="submit"
             className={clsx(
-              "btn-primary btn col-span-2 rounded-md",
+              "btn btn-primary col-span-2 rounded-md",
               loading && "btn-disabled"
             )}
           >
@@ -181,7 +183,7 @@ export default function ContactMe() {
           >
             <div className="flex items-center">
               <span>{slackRes.message}</span>
-              <label className="btn-ghost btn-circle btn" onClick={hideToast}>
+              <label className="btn btn-circle btn-ghost" onClick={hideToast}>
                 <XMarkIcon className="h-5 w-5" />
               </label>
             </div>
