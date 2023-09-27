@@ -4,6 +4,7 @@ import Link from "next/link";
 import { m } from "framer-motion";
 import type { About as AboutTypes } from "@/types";
 import { CommonTech } from "src/types/sanity";
+import { useEffect } from "react";
 
 interface Props {
   aboutData: AboutTypes;
@@ -12,6 +13,31 @@ interface Props {
 
 export default function About(props: Props) {
   const { aboutData, commonTech } = props;
+
+  useEffect(() => {
+    // @ts-ignore
+    const cardsContainer = document.getElementById("common-tech-cards");
+    if (cardsContainer) {
+      // @ts-ignore
+      cardsContainer.onmousemove = (e) => {
+        for (const card of document.getElementsByClassName(
+          "common-tech-card"
+        )) {
+          const rect = card.getBoundingClientRect(),
+            x = e.clientX - rect.left,
+            y = e.clientY - rect.top;
+          // @ts-ignore
+          card.style.setProperty("--mouse-x", `${x}px`);
+          // @ts-ignore
+          card.style.setProperty("--mouse-y", `${y}px`);
+        }
+      };
+    }
+  }, []);
+
+  const handleCardClick = (url: string) => () => {
+    window.open(url, "_blank");
+  };
 
   return (
     <div className="hero">
@@ -29,35 +55,25 @@ export default function About(props: Props) {
           <p className="py-4 text-lg leading-8 text-base-content/75">
             {aboutData?.techTitle}
           </p>
-          <div className="grid grid-cols-2 grid-rows-4 text-base-content sm:grid-cols-8 sm:grid-rows-1 sm:space-x-0">
-            {commonTech.map(({ className, title, url, html }, index) => (
-              <div key={index} className={className}>
-                <div className="tooltip hidden sm:block" data-tip={title}>
-                  <Link
-                    aria-label={title}
-                    href={url}
-                    target="_blank"
-                    className="skill-icon-link"
-                  >
-                    <svg
-                      className="skill-icon"
-                      dangerouslySetInnerHTML={{ __html: html }}
-                    />
-                  </Link>
-                </div>
-                <Link
-                  aria-label={title}
-                  href={url}
-                  target="_blank"
-                  className="skill-icon-link sm:hidden"
-                >
+          <div
+            id="common-tech-cards"
+            className="grid grid-cols-2 grid-rows-4 gap-2 text-base-content sm:grid-cols-4 sm:grid-rows-2 sm:space-x-0"
+          >
+            {commonTech.map(({ title, url, html }, index) => (
+              <div
+                key={index}
+                onClick={handleCardClick(url)}
+                className="common-tech-card"
+              >
+                <div className="card-border" />
+                <div className="card-content" />
+                <div className="card-body items-center justify-center bg-gray-200 dark:bg-gray-800">
                   <svg
                     className="skill-icon"
                     dangerouslySetInnerHTML={{ __html: html }}
                   />
-                </Link>
-
-                <div className="sm:hidden">{title}</div>
+                  <h2 className="card-title whitespace-pre text-lg">{title}</h2>
+                </div>
               </div>
             ))}
           </div>
