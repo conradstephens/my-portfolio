@@ -12,7 +12,7 @@
   }
 
   .contactInput {
-    @apply input-primary input border-gray-300 bg-gray-200 text-base-content/75 placeholder-gray-500 outline-none transition-all dark:border-gray-700 dark:bg-gray-800;
+    @apply input input-primary border-gray-300 bg-gray-200 text-base-content/75 placeholder-gray-500 outline-none transition-all dark:border-gray-700 dark:bg-gray-800;
   }
 
   .common-tech-card {
