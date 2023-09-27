@@ -2,19 +2,67 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --card-color: rgc(23, 23, 23);
+}
+
 @layer components {
   .skill-icon {
     @apply h-10 w-10 fill-base-content/75;
-  }
-
-  .skill-icon-link {
-    @apply btn-ghost btn-circle btn h-14 w-14 hover:animate-bounce;
   }
 
   .contactInput {
     @apply input-primary input border-gray-300 bg-gray-200 text-base-content/75 placeholder-gray-500 outline-none transition-all dark:border-gray-700 dark:bg-gray-800;
   }
 
+  .common-tech-card {
+    @apply card relative cursor-pointer overflow-hidden border-2 border-gray-300 bg-base-100 shadow-xl before:absolute before:left-0 before:top-0 before:z-[3] before:h-full before:w-full before:content-normal hover:before:opacity-[1] dark:border-gray-700;
+  }
+
+  .common-tech-card:hover::before {
+    opacity: 1;
+  }
+
+  #cards:hover > .common-tech-card .card-border {
+    opacity: 1;
+  }
+
+  .common-tech-card::before {
+    background: radial-gradient(
+      400px circle at var(--mouse-x) var(--mouse-y),
+      rgba(255, 255, 255, 0.2),
+      transparent 40%
+    );
+    opacity: 0;
+    transition: opacity 500ms;
+    position: absolute;
+    left: 0;
+    border-radius: inherit;
+    top: 0;
+    z-index: 3;
+    height: 100%;
+    content: "";
+    width: 100%;
+  }
+
+  .common-tech-card > .card-border {
+    background: radial-gradient(
+      200px circle at var(--mouse-x) var(--mouse-y),
+      rgba(255, 255, 255, 0.6),
+      transparent 40%
+    );
+    z-index: 1;
+  }
+
+  .common-tech-card > .card-contents {
+    background-color: var(--card-color);
+    border-radius: inherit;
+    height: calc(100% - 2px);
+    margin: 1px;
+    width: calc(100% - 2px);
+    position: relative;
+    z-index: 2;
+  }
   ::-webkit-scrollbar-thumb {
     border-radius: 5px;
   }
