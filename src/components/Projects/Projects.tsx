@@ -15,11 +15,11 @@ export default function Projects(props: Props) {
   const { setDemoSrc } = useDemoModal();
 
   return (
-    <div className="hero">
+    <div className="hero min-h-screen">
       <div className="hero-content flex max-w-screen-md flex-col items-start">
         <m.div
           initial={{ opacity: 0, y: 50 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.7 }}
           whileInView={{ opacity: 1, y: 0 }}
         >
           <h3 className="text-5xl font-medium">Projects</h3>

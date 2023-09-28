@@ -47,8 +47,8 @@ export default React.memo(function ProjectCard(props: Props) {
     const cardBody = document.getElementById(`${title}-card-body`);
     if (!cardImage || !cardBody) return;
     animate([
-      [cardImage, { opacity: 1, x: 0 }, { at: 0 }],
-      [cardBody, { opacity: 1, x: 0 }, { at: 0 }],
+      [cardImage, { opacity: 1, x: 0 }, { at: 0, duration: 0.7 }],
+      [cardBody, { opacity: 1, x: 0 }, { at: 0, duration: 0.7 }],
     ]);
   };
 
@@ -57,8 +57,16 @@ export default React.memo(function ProjectCard(props: Props) {
     const cardBody = document.getElementById(`${title}-card-body`);
     if (!cardImage || !cardBody) return;
     animate([
-      [cardImage, { opacity: 0, x: cardIsFlipped ? 999 : -999 }, { at: 0 }],
-      [cardBody, { opacity: 0, x: cardIsFlipped ? -999 : 999 }, { at: 0 }],
+      [
+        cardImage,
+        { opacity: 0, x: cardIsFlipped ? 999 : -999 },
+        { at: 0, duration: 0.7 },
+      ],
+      [
+        cardBody,
+        { opacity: 0, x: cardIsFlipped ? -999 : 999 },
+        { at: 0, duration: 0.7 },
+      ],
     ]);
   };
 
@@ -70,6 +78,7 @@ export default React.memo(function ProjectCard(props: Props) {
         cardIsFlipped && "md:flex-row-reverse"
       )}
       initial={{ opacity: 0 }}
+      transition={{ duration: 0.7 }}
       whileInView={{ opacity: 1 }}
       onViewportEnter={onViewportEnter}
     >

@@ -12,8 +12,8 @@ interface Props {
 export default function Hero(props: Props) {
   const { hero, socials } = props;
   return (
-    <div className="hero mt-12 sm:h-screen">
-      <div className="hero-content flex max-w-screen-md flex-col md:flex-row">
+    <div className="hero min-h-screen">
+      <div className="hero-content flex max-w-screen-md flex-col items-center md:flex-row">
         <div className="max-w-[388px]">
           <HeroMotionDiv>
             <h1 className="py-2 text-5xl font-medium">
@@ -26,7 +26,7 @@ export default function Hero(props: Props) {
           <HeroMotionDiv delay={0.1}>
             <h2 className="py-2 text-2xl text-primary">{hero?.jobTitle}</h2>
           </HeroMotionDiv>
-          <HeroMotionDiv delay={0.2}>
+          <HeroMotionDiv delay={0.4}>
             <p className="py-5 text-lg leading-8 text-base-content/75">
               {hero?.backgroundInfo}
             </p>
@@ -37,7 +37,7 @@ export default function Hero(props: Props) {
           >
             <Link
               href="/#contact"
-              className="btn-primary btn normal-case hover:animate-pulse"
+              className="btn btn-primary normal-case hover:animate-pulse"
             >
               {"Let's get in touch!🚀"}
             </Link>
@@ -48,7 +48,7 @@ export default function Hero(props: Props) {
                   href={url}
                   key={_id}
                   aria-label={label}
-                  className=" btn-ghost btn-circle btn text-3xl text-gray-600 hover:animate-bounce dark:text-gray-400"
+                  className=" btn btn-circle btn-ghost text-3xl text-gray-600 hover:animate-bounce dark:text-gray-400"
                   target="_blank"
                 >
                   <i className={className} />
@@ -59,8 +59,8 @@ export default function Hero(props: Props) {
         </div>
 
         <HeroMotionDiv
-          delay={0.4}
-          className="relative mx-auto mt-20 h-80 w-80 overflow-hidden rounded-full bg-gradient-to-b from-primary md:mt-0"
+          delay={0.7}
+          className="relative mx-auto h-60 w-60 overflow-hidden rounded-full bg-gradient-to-b from-primary sm:h-80 sm:w-80"
         >
           <Image
             alt="portrait"
