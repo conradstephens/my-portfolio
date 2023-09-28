@@ -40,11 +40,11 @@ export default function About(props: Props) {
   };
 
   return (
-    <div className="hero">
+    <div className="hero min-h-screen">
       <div className="hero-content max-w-screen-md">
         <m.div
           initial={{ opacity: 0, y: 50 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.7 }}
           whileInView={{ opacity: 1, y: 0 }}
           className="flex flex-col items-start"
         >

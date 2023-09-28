@@ -71,11 +71,11 @@ export default function ContactMe() {
       });
   };
   return (
-    <div className="hero">
+    <div className="hero min-h-screen">
       <div className="hero-content flex w-full max-w-screen-md flex-col items-start space-y-2">
         <m.div
           initial={{ opacity: 0, y: 50 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.7 }}
           whileInView={{ opacity: 1, y: 0 }}
         >
           <h3 className="text-5xl font-medium">Contact</h3>
@@ -152,7 +152,7 @@ export default function ContactMe() {
               {...register("message")}
               placeholder="Message"
               className={clsx(
-                "contactInput textarea textarea-primary min-h-[300px]",
+                "contactInput textarea textarea-primary min-h-[450px] sm:min-h-[300px]",
                 errors["message"] && "textarea-error outline-error"
               )}
             />

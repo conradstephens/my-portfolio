@@ -45,26 +45,27 @@ export default async function Page() {
   return (
     <div className="relative z-0 h-screen overflow-scroll scroll-smooth scrollbar-thin scrollbar-thumb-primary">
       <Navbar />
+      <div className="navbar" />
       {/* hero */}
       <section id="hero">
         <Hero hero={hero} socials={socials} />
       </section>
-      <div className="space-y-32">
-        {/* about */}
-        <section id="about">
-          <About aboutData={about} commonTech={commonTech} />
-        </section>
+      {/* <div className="space-y-32"> */}
+      {/* about */}
+      <section id="about">
+        <About aboutData={about} commonTech={commonTech} />
+      </section>
 
-        {/* projects */}
-        <section id="projects">
-          <Projects projects={projects} tech={tech} />
-        </section>
+      {/* projects */}
+      <section id="projects">
+        <Projects projects={projects} tech={tech} />
+      </section>
 
-        {/* contact */}
-        <section id="contact">
-          <ContactMe />
-        </section>
-      </div>
+      {/* contact */}
+      <section id="contact">
+        <ContactMe />
+      </section>
+      {/* </div> */}
       {/* Modal */}
       <DemoVideoModal />
     </div>
