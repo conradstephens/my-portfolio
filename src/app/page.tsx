@@ -45,7 +45,7 @@ export default async function Page() {
   return (
     <div className="relative z-0 h-screen overflow-scroll scroll-smooth scrollbar-thin scrollbar-thumb-primary">
       <Navbar />
-      <div className="navbar" />
+      {/* <div className="block sm:hidden" /> */}
       {/* hero */}
       <section id="hero">
         <Hero hero={hero} socials={socials} />
