@@ -45,12 +45,10 @@ export default async function Page() {
   return (
     <div className="relative z-0 h-screen overflow-scroll scroll-smooth scrollbar-thin scrollbar-thumb-primary">
       <Navbar />
-      {/* <div className="block sm:hidden" /> */}
       {/* hero */}
       <section id="hero">
         <Hero hero={hero} socials={socials} />
       </section>
-      {/* <div className="space-y-32"> */}
       {/* about */}
       <section id="about">
         <About aboutData={about} commonTech={commonTech} />
@@ -65,7 +63,6 @@ export default async function Page() {
       <section id="contact">
         <ContactMe />
       </section>
-      {/* </div> */}
       {/* Modal */}
       <DemoVideoModal />
     </div>
